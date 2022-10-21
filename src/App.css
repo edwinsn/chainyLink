@@ -32,7 +32,86 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.blue {
+  color: #1B13C0;
+}
+
+.btn {
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background-color: #F7F7F7;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full_screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+#hero_text {
+  flex-basis: 40%;
+
+}
+
+#hero_image {
+  flex-basis: 50%;
+}
+
+section {
+  padding: 4%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 20px 10px;
+}
+
+button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.big-gap {
+  gap: 4rem
 }
