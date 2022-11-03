@@ -1,0 +1,23 @@
+.pink {
+    color: #F72585;
+}
+
+.bg-pink {
+    background-color: #F72585;
+}
+
+.bg-pink:hover {
+    background-color: #f01376;
+}
+
+.blue {
+    color: #1B13C0;
+}
+
+.bg-blue {
+    background-color: #1B13C0;
+}
+
+.bg-white{
+    background-color: rgb(255, 255, 255);
+}
