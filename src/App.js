@@ -1,4 +1,8 @@
 import './Assets/css/App.css';
+import './Assets/css/layout.css';
+import './Assets/css/tags.css';
+import './Assets/css/colors.css';
+import './Assets/css/sizes.css';
 import Routes from './Routes';
 
 

@@ -1,10 +1,12 @@
 import '../../Assets/css/App.css';
 import hero_image from '../../Assets/Images/hero_image.jpg';
+import Nav from '../../Nav/index'
 
 function Home() {
 
     return (
         <div className="App">
+            <Nav />
             <section className='flex centered full_screen big-gap'>
                 <div className='flex-column' id='hero_text'>
                     <h1>
