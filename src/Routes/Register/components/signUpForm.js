@@ -1,39 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import userIcon from '../../../Assets/Images/user.svg'
 
-export default function LoginForm({
-    handleLogin,
-    handleLoginWithGoogle,
+export default function SignUpForm({
+    handleSignUp,
+    handleSignUpWithGoogle,
     errors,
-    invalidPassword,
-    resetPassword
 }) {
 
-    const [wasPasswordReseted, setWasPasswordReseted] = useState(false)
-
-    const handlePasswordReset = (ev) => {
-
-        resetPassword()
-        setWasPasswordReseted(true)
-
-    }
 
     const onSubmit = (ev) => {
 
         ev.preventDefault()
         const { email, password } = ev.target.elements
-        handleLogin(email.value, password.value)
+        handleSignUp(email.value, password.value)
 
     }
 
-    const showResetPasswordMessage = false//invalidPassword && !wasPasswordReseted
+    const showUserExistsMessage = false//invalidPassword && !wasPasswordReseted
 
     return (
         <section className='full_screen'>
             <header className='flex-column centered'>
                 <img src={userIcon} alt='user icon' style={{ margin: '0 auto' }} />
                 <h1 className='text-center mt-1'>
-                    Log in to save your links
+                    Sign up to save your links
                 </h1>
             </header>
             <form
@@ -62,10 +52,10 @@ export default function LoginForm({
                     type='submit'
                     className='mb-1 bg-pink'
                 >
-                    login
+                    Sign up
                 </button>
                 <button
-                    onClick={handleLoginWithGoogle}
+                    onClick={handleSignUpWithGoogle}
                     className='bg-white blue mb-1'
                 >
                     <i className='fa fa-google mr-1'>G</i>
@@ -73,20 +63,16 @@ export default function LoginForm({
                 </button>
             </form>
             <p>
-                Sin cuenta?
-                <a href='/register' className='ml-1'>
-                    Registrate
+                Have an account?
+                <a href='/login' className='ml-1'>
+                    Sign in
                 </a>
             </p>
             {
-                showResetPasswordMessage &&
-                <span onClick={handlePasswordReset}>
-                    Restablecer Contraseña
+                showUserExistsMessage &&
+                <span>
+                    User exists
                 </span>
-            }
-            {
-                wasPasswordReseted &&
-                <span>Se ha enviado un correo para restablecer la contraseña</span>
             }
         </section>
     )

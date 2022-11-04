@@ -1,50 +1,41 @@
-import { useState } from "react";
-import LoginForm from "./components/loginForm";
-import useFireBaseLogin from './logic/loginLogic'
+import SignUpForm from "./components/signUpForm";
+import useFireBaseLogin from './logic/signUpLogic'
 
 //What to do when the user just logs in
 const callBack = (userCredential) => {
     // Signed in
     localStorage.setItem('user', JSON.stringify(userCredential.user));
-    window.location = '/yourLinks'
+    window.location = '/'
 }
 
-const Login = () => {
-
-
-    const [hasAccount, setHasAccount] = useState(true)
+const Register = () => {
 
     const {
-        handleLoginWithGoogle,
-        handleLoginWithEmail,
-        //handleResetPassword,
-        //handleLogout,
-        showNewPasswordText,
-        errors
+        handleSignUpWithGoogle,
+        handleSignUpWithEmail,
+        errors,
     } = useFireBaseLogin()
 
-    const Login = (email, password) => {
+    const signUp = (email, password) => {
 
-        handleLoginWithEmail(email, password, callBack)
+        handleSignUpWithEmail(email, password, callBack)
 
     }
 
-    const LoginWithGoogle = () => {
+    const signUpWithGoogle = () => {
 
-        handleLoginWithGoogle(callBack)
+        handleSignUpWithGoogle(callBack)
+
     }
 
     return (
-        <LoginForm
-            handleLogin={Login}
-            handleLoginWithGoogle={LoginWithGoogle}
-            hasAccount={hasAccount}
-            setHasAccount={setHasAccount}
+        <SignUpForm
+            handleSignUp={signUp}
+            handleSignUpWithGoogle={signUpWithGoogle}
             errors={errors}
-            resetPassword={showNewPasswordText}
         />
     )
 
 }
 
-export default Login;
+export default Register;
