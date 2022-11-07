@@ -18,11 +18,15 @@ export default function Nav() {
             >
                 Login
             </Link>
-            <Link to="/sign-up"
-                className='ml-1'
-            >
-                Sign up
-            </Link>
+            {
+                !userIsLogged && (
+                    <Link to="/sign-up"
+                        className='ml-1'
+                    >
+                        Sign up
+                    </Link>
+                )
+            }
             {
                 userIsLogged && (
                     <Link to='/'
