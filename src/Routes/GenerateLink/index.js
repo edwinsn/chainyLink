@@ -1,8 +1,12 @@
 import React from 'react'
 import LinksList from './components/LinksList'
 import chainyIcon from '../../Assets/Images/chainyicon.svg'
+import ParentLink from './components/ParentLink'
+import useNewLink from './hooks/useNewLink'
 
-export default function index() {
+export default function GenerateLink() {
+
+    const [newLink] = useNewLink()
 
     return (
         <section>
@@ -15,7 +19,8 @@ export default function index() {
                 send playlist from diferent sites, shoping cars,
                 whatever you want!
             </h2>
-            <LinksList />
+            <ParentLink id={newLink} />
+            <LinksList parentLink={newLink} />
         </section>
     )
 }

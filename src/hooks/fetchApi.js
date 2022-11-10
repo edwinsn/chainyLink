@@ -6,7 +6,7 @@ export default function fetchApi(url, params) {
 
     const controller = new AbortController();
     const signal = controller.signal
-    const endpoint = `${api}/${url}`
+    const endpoint = `${api}${url}`
 
     const dataPromise = axios.get(endpoint,
         {
