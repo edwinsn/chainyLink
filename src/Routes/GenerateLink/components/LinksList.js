@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import LinkInput from './LinkInput'
-
-
+import LinkInput from './DragableLink'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-
 
 
 const reorder = (list, startIndex, endIndex) => {
@@ -26,22 +23,13 @@ const getListStyle = isDraggingOver => ({
 });
 
 
-
-
-export default function LinksList() {
+export default function LinksList({ parentLink }) {
 
     const numberOfLinks = useSelector(state => state).numberOfLinks || 0
     const [links, setLinks] = useState(new Array(numberOfLinks).fill(0).map((_, index) => ({
         id: index,
         content: `item ${index}`
     })));
-
-
-
-
-
-
-
 
     const onDragEnd = (result) => {
 
@@ -61,10 +49,6 @@ export default function LinksList() {
     }
 
 
-
-
-
-
     return (
 
         <DragDropContext onDragEnd={onDragEnd}>
@@ -76,20 +60,17 @@ export default function LinksList() {
                         style={getListStyle(snapshot.isDraggingOver)}
                     >
 
-
-
                         {
                             links.map(({ id }, index) => (
                                 <LinkInput
                                     key={`link-${id}`}
                                     isLast={index === numberOfLinks - 1}
                                     id={id}
-                                    index={index} />
+                                    index={index}
+                                    parentLink={parentLink}
+                                     />
                             ))
                         }
-
-
-
 
                         {provided.placeholder}
                     </div>
