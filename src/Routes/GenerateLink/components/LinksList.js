@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import LinkInput from './DragableLink'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import updateLinkGroupOrder from '../services/updateLinkGroupOrder'
 
 
 const reorder = (list, startIndex, endIndex) => {
@@ -44,7 +45,17 @@ export default function LinksList({ parentLink }) {
             result.destination.index
         );
 
+        const previousPosition = result.source.index
+        const newPosition = result.destination.index
+
         setLinks(sortedLinks);
+        updateLinkGroupOrder({
+            parentLink,
+            linkUpdated: {
+                previousPosition,
+                newPosition,
+            }
+        })
 
     }
 
@@ -68,7 +79,7 @@ export default function LinksList({ parentLink }) {
                                     id={id}
                                     index={index}
                                     parentLink={parentLink}
-                                     />
+                                />
                             ))
                         }
 
