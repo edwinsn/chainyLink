@@ -1,5 +1,6 @@
 import React from 'react'
 import updateLink from '../services/updateLink'
+import debounce from '../../../utils/debounce'
 
 export default function Link({
     placeholder,
@@ -10,14 +11,14 @@ export default function Link({
     parentLink,
 }) {
 
-    const handleChanged = (ev) => {
+    const handleChanged = debounce((ev) => {
         const newLinkText = ev.target.value
         updateLink({
             newLinkText,
             positionToModify: position,
             parentLink,
         })
-    }
+    })
 
     return (
         <input
