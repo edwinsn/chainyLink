@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOut from '../Components/LogOut';
+import icon_home from '../Assets/Images/user.svg';
+import '../Assets/css/nav.css';
 
 export default function Nav() {
 
@@ -8,33 +10,38 @@ export default function Nav() {
 
     return (
         <nav>
-            <Link to="/"
-                className='ml-1'
-            >
-                Home
+            <Link to="/">
+                <img
+                    id="icon_home"
+                    src={icon_home}
+                />
+                <p>Chayny Link</p>
             </Link>
-            <Link to="/login"
-                className='ml-1'
-            >
-                Login
-            </Link>
-            {
-                !userIsLogged && (
-                    <Link to="/sign-up"
-                        className='ml-1'
-                    >
-                        Sign up
-                    </Link>
-                )
-            }
-            {
-                userIsLogged && (
-                    <Link to='/'
-                    >
-                        <LogOut />
-                    </Link>
-                )
-            }
+            <div>
+                <Link to="/login"
+                >
+                    Login
+                </Link>
+                {
+                    !userIsLogged && (
+                        <Link to="/sign-up"
+                            className='ml-1'
+                        >
+                            Sign up
+                        </Link>
+                    )
+                }
+                {
+                    userIsLogged && (
+                        <Link to='/'
+                        >
+                            <LogOut />
+                        </Link>
+                    )
+                }
+
+            </div>
+
         </nav>
     )
 
