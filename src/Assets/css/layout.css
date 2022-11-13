@@ -19,6 +19,11 @@
     align-items: center;
 }
 
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .mb-1 {
     margin: .5rem;
 }

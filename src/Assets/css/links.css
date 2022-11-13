@@ -1,4 +1,13 @@
-.new-link{
+.new-link {
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
+}
+
+#parent-link img {
+    position: relative;
+    right: 3em;
+}
+
+#parent-link input {
+    padding-right: 5em;
 }

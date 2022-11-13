@@ -10,11 +10,11 @@ export default function GenerateLink() {
 
     return (
         <section>
-            <header>
+            <header className='text-center'>
                 <img src={chainyIcon} alt='' />
                 Chain your links
             </header>
-            <h2>
+            <h2 className='text-center'>
                 Share everything you want throw one single link,
                 send playlist from diferent sites, shoping cars,
                 whatever you want!
