@@ -4,6 +4,7 @@ import './Assets/css/tags.css';
 import './Assets/css/colors.css';
 import './Assets/css/sizes.css';
 import './Assets/css/links.css'
+import './Assets/css/general.css';
 import Routes from './Routes';
 
 
