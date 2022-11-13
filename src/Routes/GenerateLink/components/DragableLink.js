@@ -1,9 +1,7 @@
 import React from 'react'
-import { addLink, removeLink } from '../../../reducers/features/links'
-import { useDispatch } from 'react-redux'
-
 import { Draggable } from "react-beautiful-dnd";
 import Link from './Link';
+import dragIcon from '../../../Assets/Images/dragIcon.svg'
 
 
 const getItemStyle = (isDragging, draggableStyle) => ({
@@ -25,17 +23,7 @@ const grid = 8;
 
 export default function LinkInput({ isLast, id, index, parentLink }) {
 
-    const dispatch = useDispatch()
-    const onFocused = () => dispatch(addLink())
-    const onBlurred = (ev) => {
-        if (ev.target.value === '') dispatch(removeLink())
-    }
-
-    const place = Math.random()
-
     return (
-
-
         <Draggable key={id} draggableId={`item-${id}`} index={index}>
             {(provided, snapshot) => (
                 <div
@@ -46,18 +34,20 @@ export default function LinkInput({ isLast, id, index, parentLink }) {
                         snapshot.isDragging,
                         provided.draggableProps.style
                     )}
+                    className='flex-end'
                 >
+                    <img
+                        src={dragIcon}
+                        alt='drag link'
+                    />
                     <Link
-                        placeholder={place}
                         className={`${isLast && 'new-link'} mt-1`}
-                        onFocus={isLast ? onFocused : null}
-                        onBlur={isLast ? onBlurred : null}
                         position={index}
                         parentLink={parentLink}
+                        isLast={isLast}
                     />
                 </div>
             )}
         </Draggable>
-
     )
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 import updateLink from '../services/updateLink'
 import debounce from '../../../utils/debounce'
+import { addLink, removeLink } from '../../../reducers/features/links'
+import { useDispatch } from 'react-redux'
 
 export default function Link({
-    placeholder,
     className,
-    onFocus,
-    onBlur,
     position,
     parentLink,
+    isLast,
 }) {
 
     const handleChanged = debounce((ev) => {
@@ -20,13 +20,19 @@ export default function Link({
         })
     })
 
+    const dispatch = useDispatch()
+    const onFocused = () => dispatch(addLink())
+    const onBlurred = (ev) => {
+        if (ev.target.value === '') dispatch(removeLink())
+    }
+
     return (
         <input
-            placeholder={placeholder}
-            className={className}
-            onFocus={onFocus}
-            onBlur={onBlur}
+            placeholder={'https://'}
+            className={`${className} w-90`}
             onChange={handleChanged}
+            onFocus={isLast ? onFocused : null}
+            onBlur={isLast ? onBlurred : null}
         />
     )
 }

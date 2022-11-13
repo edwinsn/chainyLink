@@ -1,6 +1,7 @@
 import '../../Assets/css/App.css';
 import hero_image from '../../Assets/Images/Frame-1.svg';
 import icon_decoration from '../../Assets/Images/icon_decoration.svg';
+import './index.css';
 
 function Home() {
 
