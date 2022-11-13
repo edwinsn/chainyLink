@@ -3,6 +3,7 @@ import About from './Home';
 import Login from './Login';
 import Register from './Register';
 import GenerateLink from './GenerateLink';
+import Link from './Link'
 import Nav from '../Nav'
 
 export default function App() {
@@ -17,8 +18,8 @@ export default function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/login" element={<Login />} />
                     <Route path='/sign-up' element={<Register />} />
+                    <Route path="/link/:id" element={<Link />} />
                     {/*<Route path="/links" element={<Links />} />*/}
-                    {/*<Route path="/links/:id" element={<Link />} />*/}
                 </Routes>
             </BrowserRouter>
         </>
