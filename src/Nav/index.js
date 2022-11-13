@@ -18,6 +18,16 @@ export default function Nav() {
                 />
             </Link>
             <div>
+                <Link
+                    to="/"
+                >
+                    New Link
+                </Link>
+                <Link
+                    to="/about"
+                >
+                    About
+                </Link>
                 {!userIsLogged && <Link
                     to="/login"
                 >
