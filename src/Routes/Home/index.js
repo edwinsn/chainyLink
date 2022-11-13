@@ -18,7 +18,7 @@ function Home() {
                         Send you favory playlist from diferent sites,
                         your social networks or just a shhopping car from diferent stores!
                     </h2>
-                    <button className='btn' >
+                    <button className='bg-pink' >
                         Chain links!
                     </button>
                 </div>

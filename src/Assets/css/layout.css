@@ -22,7 +22,8 @@
 .mb-1 {
     margin: .5rem;
 }
-.mt-1{
+
+.mt-1 {
     margin-top: .5rem;
 }
 
@@ -34,6 +35,15 @@
     margin-left: .4rem;
 }
 
-.text-center{
+.text-center {
     text-align: center;
+}
+
+.big-gap {
+    gap: 4rem;
+}
+
+.full_screen {
+    width: 100vw;
+    height: 95vh;
 }
