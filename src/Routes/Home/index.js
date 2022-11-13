@@ -1,17 +1,15 @@
 import '../../Assets/css/App.css';
 import hero_image from '../../Assets/Images/Frame-1.svg';
-import Nav from '../../Nav/index'
 import icon_decoration from '../../Assets/Images/icon_decoration.svg';
 
 function Home() {
 
     return (
         <div className="App">
-            <Nav />
             <section className='main full_screen big-gap'>
                 <div className='flex-column' id='hero_text'>
                     <h1>
-                        <img src={icon_decoration} id="icon_decoration" />
+                        <img src={icon_decoration} id="icon_decoration" alt='' />
                         Share your
                         <span className='blue'> Links </span>
                         at once

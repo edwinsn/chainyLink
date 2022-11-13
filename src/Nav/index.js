@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOut from '../Components/LogOut';
-import icon_home from '../Assets/Images/user.svg';
+import icon_home from '../Assets/Images/chainyicon.svg';
 import '../Assets/css/nav.css';
 
 export default function Nav() {
@@ -14,14 +14,16 @@ export default function Nav() {
                 <img
                     id="icon_home"
                     src={icon_home}
+                    alt=''
                 />
-                <p>Chayny Link</p>
             </Link>
             <div>
-                <Link to="/login"
+                {!userIsLogged && <Link
+                    to="/login"
                 >
                     Login
                 </Link>
+                }
                 {
                     !userIsLogged && (
                         <Link to="/sign-up"

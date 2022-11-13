@@ -3,20 +3,24 @@ import About from './Home';
 import Login from './Login';
 import Register from './Register';
 import GenerateLink from './GenerateLink';
+import Nav from '../Nav'
 
 export default function App() {
 
     return (
-        <BrowserRouter>
-            <Routes>
+        <>
+            <BrowserRouter>
+                <Nav />
+                <Routes>
 
-                <Route path="/" element={<GenerateLink />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/login" element={<Login />} />
-                <Route path='/sign-up' element={<Register />} />
-                {/*<Route path="/links" element={<Links />} />*/}
-                {/*<Route path="/links/:id" element={<Link />} />*/}
-            </Routes>
-        </BrowserRouter>
+                    <Route path="/" element={<GenerateLink />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path='/sign-up' element={<Register />} />
+                    {/*<Route path="/links" element={<Links />} />*/}
+                    {/*<Route path="/links/:id" element={<Link />} />*/}
+                </Routes>
+            </BrowserRouter>
+        </>
     );
 }
