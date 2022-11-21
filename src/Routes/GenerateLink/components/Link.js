@@ -3,12 +3,14 @@ import updateLink from '../services/updateLink'
 import debounce from '../../../utils/debounce'
 import { addLink, removeLink } from '../../../reducers/features/links'
 import { useDispatch } from 'react-redux'
+import LinkColorPicker from './LinkColorPicker'
 
 export default function Link({
     className,
     position,
     parentLink,
     isLast,
+    id
 }) {
 
     const handleChanged = debounce((ev) => {
@@ -27,12 +29,15 @@ export default function Link({
     }
 
     return (
-        <input
-            placeholder={'https://'}
-            className={`${className} w-90`}
-            onChange={handleChanged}
-            onFocus={isLast ? onFocused : null}
-            onBlur={isLast ? onBlurred : null}
-        />
+        <>
+            <input
+                placeholder={'https://'}
+                className={`${className} w-90`}
+                onChange={handleChanged}
+                onFocus={isLast ? onFocused : null}
+                onBlur={isLast ? onBlurred : null}
+            />
+            <LinkColorPicker id={id} />
+        </>
     )
 }

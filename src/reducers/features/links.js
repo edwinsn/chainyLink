@@ -12,10 +12,19 @@ export const cardsSlice = createSlice({
         },
         setBackgroundColor: (state, action) => {
             state.backgroundColor = action.payload
+        },
+        setLinkColor: (state, action) => {
+            const { id, backgroundColor } = action.payload
+            state[id] = { backgroundColor }
         }
     },
 })
 
-export const { addLink, removeLink, setBackgroundColor } = cardsSlice.actions
+export const {
+    addLink,
+    removeLink,
+    setBackgroundColor,
+    setLinkColor,
+} = cardsSlice.actions
 
 export default cardsSlice.reducer

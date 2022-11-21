@@ -6,11 +6,16 @@ import './Assets/css/sizes.css';
 import './Assets/css/links.css'
 import './Assets/css/general.css';
 import Routes from './Routes';
-
+import { useSelector } from 'react-redux'
 
 function App() {
-  return ( 
-    <Routes />
+
+  const color = useSelector(state => state.backgroundColor)
+
+  return (
+    <body style={{ backgroundColor: color }}>
+      <Routes />
+    </body>
   );
 }
 
