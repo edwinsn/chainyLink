@@ -3,13 +3,15 @@ import LinksList from './components/LinksList'
 import chainyIcon from '../../Assets/Images/chainyicon.svg'
 import ParentLink from './components/ParentLink'
 import useNewLink from './hooks/useNewLink'
+import BackgroundColorPicker from './components/BackgroundColorPicker'
+import './Assets/index.css'
 
 export default function GenerateLink() {
 
     const [newLink] = useNewLink()
 
     return (
-        <section>
+        <section id='generate-link-section'>
             <header className='text-center'>
                 <img src={chainyIcon} alt='' />
                 Chain your links
@@ -20,6 +22,7 @@ export default function GenerateLink() {
                 whatever you want!
             </h2>
             <ParentLink id={newLink} />
+            <BackgroundColorPicker id={newLink} />
             <LinksList parentLink={newLink} />
         </section>
     )
