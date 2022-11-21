@@ -1,16 +1,17 @@
 import React from 'react'
+import Link from './Link'
 
 export default function LinksList({ links }) {
 
     return (
-        <div>
+        <div className='centered flex-column'>
             {
                 links?.map((link, index) => (
-                    <div
+                    <Link
+                        content={link}
+                        id={`link-${index}`}
                         key={`link-${index}`}
-                    >
-                        {link}
-                    </div>
+                    />
                 ))
             }
         </div>

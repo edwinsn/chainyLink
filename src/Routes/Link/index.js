@@ -2,6 +2,7 @@ import React from 'react'
 import LinksList from './components/LinksList'
 //import ParentLink from './components/ParentLink'
 import useLink from './hooks/useLink'
+import './Assets/links.css'
 
 export default function Link() {
 
@@ -11,6 +12,9 @@ export default function Link() {
     return (
         <section>
             {/* <ParentLink id={newLink} />*/}
+            <header className='text-center'>
+                {link?.name || 'Your Links'}
+            </header>
             <LinksList links={link?.childLinks} />
         </section>
     )

@@ -1,0 +1,10 @@
+.link-container {
+    padding: 10px 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.link-content {
+    height: 28vh;
+    background-color: white;
+}
