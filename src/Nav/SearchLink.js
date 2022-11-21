@@ -7,7 +7,7 @@ export default function SearchLink() {
 
     const onKeyDown = (e) => {
         if (e.key === 'Enter') {
-            const link = e.target.value
+            const link = e.target.value.split('/').at(-1)
             navigate(`/link/${link}`)
         }
     }

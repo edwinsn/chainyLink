@@ -1,0 +1,16 @@
+nav {
+    align-items: center;
+    border: 1px solid none;
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    padding: 0 2em;
+}
+
+#icon_home {
+    height: 2.8rem;
+}
+
+p {
+    display: inline-block;
+}
