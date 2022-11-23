@@ -7,8 +7,9 @@ import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPalette } from '@fortawesome/free-solid-svg-icons'
+import updateLink from '../services/updateLink'
 
-export default function LinkOptions() {
+export default function BackgroundColorPicker({ parentLink }) {
 
     const [open, setOpen] = useState(false);
 
@@ -20,6 +21,10 @@ export default function LinkOptions() {
     const color = useSelector(state => state.links?.backgroundColor)
     const handleChangeComplete = (color) => {
         dispatch(setBackgroundColor(color.hex))
+        updateLink({
+            parentLink,
+            background: color.hex
+        })
     }
 
 
