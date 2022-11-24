@@ -4,7 +4,8 @@ export default function updateLink({
     parentLink,
     positionToModify,
     newLinkText,
-    background
+    background,
+    newLinkBackground
 }) {
 
     const api = process.env.REACT_APP_API_URL
@@ -12,7 +13,8 @@ export default function updateLink({
     return axios.patch(`${api}/links/${parentLink}`, {
         positionToModify,
         newLinkText,
-        background
+        background,
+        newLinkBackground
     })
 
 }

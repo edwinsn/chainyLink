@@ -37,7 +37,7 @@ export default function Link({
                 onFocus={isLast ? onFocused : null}
                 onBlur={isLast ? onBlurred : null}
             />
-            <LinkColorPicker id={id} />
+            <LinkColorPicker id={id} parentLink={parentLink} position={position} />
         </>
     )
 }
