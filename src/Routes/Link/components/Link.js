@@ -1,9 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
-export default function Link({ id, content }) {
-
-    const backgroundColor = useSelector(state => state.links?.[id]?.backgroundColor)
+export default function Link({ id, content, backgroundColor }) {
 
     const style = { backgroundColor }
 

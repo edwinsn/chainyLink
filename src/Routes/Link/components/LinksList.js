@@ -8,9 +8,10 @@ export default function LinksList({ links }) {
             {
                 links?.map((link, index) => (
                     <Link
-                        content={link}
+                        content={link.url}
                         id={`link-${index}`}
                         key={`link-${index}`}
+                        backgroundColor={link.background}
                     />
                 ))
             }
