@@ -37,7 +37,7 @@ export default function LinksList({ parentLink }) {
 
     }, [numberOfLinks])
 
-    const [links, setLinks] = useState(new Array(numberOfLinks).fill(0).map((_, index) => ({
+    const [links, setLinks] = useState(() => new Array(numberOfLinks).fill(0).map((_, index) => ({
         id: index,
     })));
 
