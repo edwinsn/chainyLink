@@ -26,6 +26,11 @@ export default function Nav() {
                     New Link
                 </Link>
                 <Link
+                    to='my-links'
+                >
+                    My links
+                </Link>
+                <Link
                     to="/about"
                 >
                     About
