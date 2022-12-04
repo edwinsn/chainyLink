@@ -1,7 +1,9 @@
 import useFetch from '../../../hooks/useFetch'
+import useFromLocalStorage from '../../../hooks/useFromLocalStorage'
 
 export default function useNewLink() {
 
-  return useFetch('/links', 'parentLink')
+  const owner = useFromLocalStorage('user')?.uid
+  return useFetch('/links', 'parentLink', JSON.stringify({ owner }))
 
 }
