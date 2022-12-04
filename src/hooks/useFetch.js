@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import fetchApi from './fetchApi'
 
-export default function useFetch(url, dataToExtract) {
+export default function useFetch(url, dataToExtract, params) {
 
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -12,7 +12,7 @@ export default function useFetch(url, dataToExtract) {
         setLoading(true)
         setNoData(false)
 
-        const [dataPromise, cancel] = fetchApi(url)
+        const [dataPromise, cancel] = fetchApi(url, JSON.parse(params))
 
         dataPromise
             .then((res) => {
@@ -37,7 +37,7 @@ export default function useFetch(url, dataToExtract) {
 
 
 
-    }, [dataToExtract, url])
+    }, [dataToExtract, url, params])
 
     return [data, loading, noData]
 
