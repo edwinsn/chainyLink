@@ -5,6 +5,7 @@ import Register from './Register';
 import GenerateLink from './GenerateLink';
 import Link from './Link'
 import Nav from '../Nav'
+import UserLinks from './UserLinks'
 
 export default function App() {
 
@@ -19,7 +20,7 @@ export default function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path='/sign-up' element={<Register />} />
                     <Route path="/link/:id" element={<Link />} />
-                    {/*<Route path="/links" element={<Links />} />*/}
+                    <Route path="/my-links" element={<UserLinks />} />
                 </Routes>
             </BrowserRouter>
         </>
