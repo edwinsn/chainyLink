@@ -5,7 +5,8 @@ export default function updateLink({
     positionToModify,
     newLinkText,
     background,
-    newLinkBackground
+    newLinkBackground,
+    newImage
 }) {
 
     const api = process.env.REACT_APP_API_URL
@@ -14,7 +15,8 @@ export default function updateLink({
         positionToModify,
         newLinkText,
         background,
-        newLinkBackground
+        newLinkBackground,
+        newImage
     })
 
 }

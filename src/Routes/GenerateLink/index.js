@@ -4,6 +4,7 @@ import chainyIcon from '../../Assets/Images/chainyicon.svg'
 import ParentLink from './components/ParentLink'
 import useNewLink from './hooks/useNewLink'
 import BackgroundColorPicker from './components/BackgroundColorPicker'
+import LinkImage from './components/LinkImage'
 import './Assets/index.css'
 import { setBackgroundColor } from '../../reducers/features/links'
 import { useDispatch } from 'react-redux'
@@ -31,6 +32,7 @@ export default function GenerateLink() {
                 whatever you want!
             </h2>
             <ParentLink id={newLink} />
+            <LinkImage parentLink={newLink} />
             <BackgroundColorPicker parentLink={newLink} />
             <LinksList parentLink={newLink} />
         </section>

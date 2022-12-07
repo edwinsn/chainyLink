@@ -13,9 +13,9 @@ function App() {
   const color = useSelector(state => state.backgroundColor)
 
   return (
-    <body style={{ backgroundColor: color }}>
+    <div style={{ backgroundColor: color }}>
       <Routes />
-    </body>
+    </div>
   );
 }
 
