@@ -24,7 +24,7 @@ export default function Link() {
             <header
                 className='flex flex-column'
                 id='link-name'>
-                <LinkImage src={link?.image && false} name={link?.name || link?.childLinks?.[0]?.url} />
+                <LinkImage src={link?.image} name={link?.name || link?.childLinks?.[0]?.url} />
                 <div>{link?.name || 'Your Links'}</div>
             </header>
             <LinksList links={link?.childLinks} />
