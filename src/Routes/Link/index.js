@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import LinksList from './components/LinksList'
-//import ParentLink from './components/ParentLink'
+import LinkImage from './components/LinkImage'
 import useLink from './hooks/useLink'
 import './Assets/links.css'
 import { useDispatch } from 'react-redux'
@@ -20,10 +20,12 @@ export default function Link() {
     }, [link?.background, dispatch])
 
     return (
-        <section>
-            {/* <ParentLink id={newLink} />*/}
-            <header className='text-center'>
-                {link?.name || 'Your Links'}
+        <section className='text-center'>
+            <header
+                className='flex flex-column'
+                id='link-name'>
+                <LinkImage src={link?.image && false} name={link?.name || link?.childLinks?.[0]?.url} />
+                <div>{link?.name || 'Your Links'}</div>
             </header>
             <LinksList links={link?.childLinks} />
         </section>
