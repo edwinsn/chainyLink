@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.flex-end{
+.flex-end {
     display: flex;
     justify-content: flex-end;
 }
@@ -40,8 +40,16 @@
     margin-left: .4rem;
 }
 
+.my-2 {
+    margin: .8rem 0;
+}
+
 .text-center {
     text-align: center;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 .big-gap {

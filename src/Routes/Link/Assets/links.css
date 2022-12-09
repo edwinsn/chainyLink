@@ -1,10 +1,25 @@
+.copy-child-link-icon {
+    position: absolute;
+    right: 3em;
+}
+
 .link-container {
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 80%;
     text-align: center;
+    position: relative;
+    margin: .5em 0;
 }
 
 .link-content {
     height: 28vh;
     background-color: white;
+}
+
+.link-name {
+    margin: 5vh 0 ;
+}
+
+.auxiliar-link-image{
+    font-size: 3em;
 }

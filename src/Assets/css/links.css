@@ -11,3 +11,10 @@
 #parent-link input {
     padding-right: 5em;
 }
+
+#link-image {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    margin: 10vh 0 5vh 0 ;
+}
