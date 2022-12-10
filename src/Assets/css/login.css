@@ -38,3 +38,8 @@ form button:active {
     transform: translateY(1.5px)
 }
 
+.googleIcon {
+    fill: red;
+    height: 1rem;
+    margin: 0.5vh 0.4rem 0 0;
+}

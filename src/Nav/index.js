@@ -11,19 +11,18 @@ export default function Nav() {
 
     return (
         <nav>
-            <Link to="/">
-                <img
-                    id="icon_home"
-                    src={icon_home}
-                    alt=''
-                />
-            </Link>
             <div>
-                <SearchLink />
+                <Link to="/">
+                    <img
+                        id="icon_home"
+                        src={icon_home}
+                        alt=''
+                    />
+                </Link>
                 <Link
-                    to="/"
+                    to="/about"
                 >
-                    New Link
+                    About
                 </Link>
                 <Link
                     to='my-links'
@@ -31,10 +30,14 @@ export default function Nav() {
                     My links
                 </Link>
                 <Link
-                    to="/about"
+                    to="/"
                 >
-                    About
+                    New Link
                 </Link>
+            </div>
+            <div className='part-2'>
+                <SearchLink />
+
                 {!userIsLogged && <Link
                     to="/login"
                 >

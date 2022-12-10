@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import userIcon from '../../../Assets/Images/user.svg'
+import googleIcon from "../../../Assets/Images/google.svg"
 import "../../../Assets/css/login.css"
 
 export default function LoginForm({
@@ -69,7 +70,8 @@ export default function LoginForm({
                     onClick={handleLoginWithGoogle}
                     className='bg-white blue mb-1 '
                 >
-                    <i className='fa fa-google mr-1'>Use google</i>
+                    <img src={googleIcon} alt='google icon' className='googleIcon ' />
+                     Use Google
                 </button>
             </form>
             <p className='text-center'>

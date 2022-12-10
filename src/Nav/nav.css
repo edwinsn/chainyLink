@@ -14,3 +14,29 @@ nav {
 p {
     display: inline-block;
 }
+
+.search {
+    border: 1px solid blue;
+    border-radius: 15px;
+    height: 2.6rem;
+    width: 12rem;
+}
+
+.search input {
+    background-color: #EDF2FB;
+    border: 0;
+    height: 3vh;
+    text-align: left;
+    font-size: 0.9rem;
+    width: 8rem;
+}
+
+.search img {
+    display: inline-block;
+    height: 4vh;
+    padding: 10px 0px 0 25px;
+}
+
+.part-2 {
+    display: flex;
+}

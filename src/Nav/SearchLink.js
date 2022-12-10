@@ -1,5 +1,8 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
+import searchIcon from "../Assets/Images/search.svg"
+import './nav.css';
+<script src="https://kit.fontawesome.com/fb5bf97765.js" crossorigin="anonymous"></script>
 
 export default function SearchLink() {
 
@@ -15,10 +18,14 @@ export default function SearchLink() {
     const link = window.location.pathname.split('/')[2]
 
     return (
-        <input
-            onKeyDown={onKeyDown}
-            placeholder='search'
-            defaultValue={link}
-        />
+        <div className='search'>
+            <input
+                onKeyDown={onKeyDown}
+                placeholder='search'
+                defaultValue={link}
+            />
+            <img src={searchIcon} />
+        </div>
+
     )
 }
