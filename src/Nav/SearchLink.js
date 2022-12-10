@@ -24,7 +24,7 @@ export default function SearchLink() {
                 placeholder='search'
                 defaultValue={link}
             />
-            <img src={searchIcon} />
+            <img src={searchIcon} alt="search icon" />
         </div>
 
     )
