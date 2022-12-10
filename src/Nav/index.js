@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LogOut from '../Components/LogOut';
 import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
-import './nav.css';
+import './Assets/nav.css';
 
 export default function Nav() {
 

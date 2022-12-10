@@ -1,8 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import searchIcon from "../Assets/Images/search.svg"
-import './nav.css';
-<script src="https://kit.fontawesome.com/fb5bf97765.js" crossorigin="anonymous"></script>
+import './Assets/searchbar.css';
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export default function SearchLink() {
 
@@ -18,13 +18,22 @@ export default function SearchLink() {
     const link = window.location.pathname.split('/')[2]
 
     return (
-        <div className='search'>
-            <input
-                onKeyDown={onKeyDown}
-                placeholder='search'
-                defaultValue={link}
-            />
-            <img src={searchIcon} alt="search icon" />
+        <div class="searchbar-contanier">
+            <div class="search">
+                <input
+                    type="text"
+                    class="search__input"
+                    aria-label="search"
+                    onKeyDown={onKeyDown}
+                    placeholder='search'
+                    defaultValue={link}
+                />
+                <button
+                    class="search__submit flex centered"
+                    aria-label="submit search">
+                    <FontAwesomeIcon icon={faSearch} />
+                </button>
+            </div>
         </div>
 
     )

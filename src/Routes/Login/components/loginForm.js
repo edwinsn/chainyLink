@@ -39,7 +39,7 @@ export default function LoginForm({
                 </h1>
             </div>
             <form
-                className='flex-column aling-items'
+                className='flex-column align-items-center'
                 onSubmit={onSubmit}
             >
 
