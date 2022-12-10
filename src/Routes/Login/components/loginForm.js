@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import userIcon from '../../../Assets/Images/user.svg'
 import googleIcon from "../../../Assets/Images/google.svg"
-import "../../../Assets/css/login.css"
+import "../assets/login.css"
 
 export default function LoginForm({
     handleLogin,
@@ -71,7 +71,7 @@ export default function LoginForm({
                     className='bg-white blue mb-1 '
                 >
                     <img src={googleIcon} alt='google icon' className='googleIcon ' />
-                     Use Google
+                    Use Google
                 </button>
             </form>
             <p className='text-center'>
