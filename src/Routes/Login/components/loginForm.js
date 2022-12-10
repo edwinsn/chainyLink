@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import userIcon from '../../../Assets/Images/user.svg'
+import "../../../Assets/css/login.css"
 
 export default function LoginForm({
     handleLogin,
@@ -29,15 +30,15 @@ export default function LoginForm({
     const showResetPasswordMessage = false//invalidPassword && !wasPasswordReseted
 
     return (
-        <section className='full_screen'>
-            <header className='flex-column centered'>
-                <img src={userIcon} alt='user icon' style={{ margin: '0 auto' }} />
-                <h1 className='text-center mt-1'>
+        <section className='full_screen contenedor flex-column aling-center justify-center'>
+            <div className='flex-column centered h'>
+                <img src={userIcon} alt='user icon' />
+                <h1 className='text-center'>
                     Log in to save your links
                 </h1>
-            </header>
+            </div>
             <form
-                className='column'
+                className='flex-column aling-items'
                 onSubmit={onSubmit}
             >
 
@@ -46,7 +47,7 @@ export default function LoginForm({
 
                 <input
                     placeholder='name or email'
-                    className='mb-1 text-center w-100'
+                    className='text-center '
                     name='email'
                     required
                     autoFocus
@@ -54,27 +55,26 @@ export default function LoginForm({
                 <input
                     placeholder='password'
                     name='password'
-                    className='mb-1 text-center'
+                    className='text-center'
                     required
                     type='password'
                 />
                 <button
                     type='submit'
-                    className='mb-1 bg-pink'
+                    className='bg-pink'
                 >
                     login
                 </button>
                 <button
                     onClick={handleLoginWithGoogle}
-                    className='bg-white blue mb-1'
+                    className='bg-white blue mb-1 '
                 >
-                    <i className='fa fa-google mr-1'>G</i>
-                    use google
+                    <i className='fa fa-google mr-1'>Use google</i>
                 </button>
             </form>
-            <p>
+            <p className='text-center'>
                 Sin cuenta?
-                <a href='/register' className='ml-1'>
+                <a href='/register' className='ml-1 '>
                     Registrate
                 </a>
             </p>
