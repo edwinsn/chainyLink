@@ -19,17 +19,17 @@ export default function SearchLink() {
 
     return (
         <div class="searchbar-contanier">
-            <div class="search">
+            <div class="search rounded">
                 <input
                     type="text"
                     class="search__input"
                     aria-label="search"
                     onKeyDown={onKeyDown}
-                    placeholder='search'
+                    placeholder='search link'
                     defaultValue={link}
                 />
                 <button
-                    class="search__submit flex centered"
+                    class="search__submit flex centered gray"
                     aria-label="submit search">
                     <FontAwesomeIcon icon={faSearch} />
                 </button>
