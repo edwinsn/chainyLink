@@ -18,18 +18,18 @@ export default function SearchLink() {
     const link = window.location.pathname.split('/')[2]
 
     return (
-        <div class="searchbar-contanier">
-            <div class="search rounded">
+        <div className="searchbar-contanier">
+            <div className="search rounded">
                 <input
                     type="text"
-                    class="search__input"
+                    className="search__input"
                     aria-label="search"
                     onKeyDown={onKeyDown}
                     placeholder='search link'
                     defaultValue={link}
                 />
                 <button
-                    class="search__submit flex centered gray"
+                    className="search__submit flex centered gray"
                     aria-label="submit search">
                     <FontAwesomeIcon icon={faSearch} />
                 </button>

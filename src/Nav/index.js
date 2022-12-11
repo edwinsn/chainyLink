@@ -11,13 +11,18 @@ export default function Nav() {
 
     return (
         <nav>
-            <div>
+            <div className='flex centered'>
                 <Link to="/">
                     <img
                         id="icon_home"
                         src={icon_home}
                         alt=''
                     />
+                </Link>
+                <Link
+                    to="/"
+                >
+                    New Link
                 </Link>
                 <Link
                     to="/about"
@@ -29,13 +34,8 @@ export default function Nav() {
                 >
                     My links
                 </Link>
-                <Link
-                    to="/"
-                >
-                    New Link
-                </Link>
             </div>
-            <div className='part-2'>
+            <div className='flex centered'>
                 <SearchLink />
 
                 {!userIsLogged && <Link
@@ -46,9 +46,7 @@ export default function Nav() {
                 }
                 {
                     !userIsLogged && (
-                        <Link to="/sign-up"
-                            className='ml-1'
-                        >
+                        <Link to="/sign-up" >
                             Sign up
                         </Link>
                     )

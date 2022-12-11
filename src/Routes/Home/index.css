@@ -29,6 +29,13 @@
     /*flex-grow: 1;*/
 }
 
+#chain-links-button a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
 
 
 .main {

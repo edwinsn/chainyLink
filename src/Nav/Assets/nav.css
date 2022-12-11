@@ -7,32 +7,16 @@ nav {
     padding: 0 2em;
 }
 
+nav a {
+    margin: 0 0 0 1em;
+    text-decoration: none;
+    color: var(--blue);
+}
+
 #icon_home {
     height: 2.8rem;
 }
 
 p {
     display: inline-block;
-}
-
-/*
-#search {
-    border: 1px solid blue;
-    border-radius: 15px;
-    height: 2.6rem;
-    width: 12rem;
-}
-
-#search {
-    background-color: transparent;
-    border: 0;
-    height: 2rem;
-    text-align: left;
-    font-size: 0.9rem;
-    width: 8rem;
-}
-*/
-
-.part-2 {
-    display: flex;
 }

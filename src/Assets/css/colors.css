@@ -1,3 +1,7 @@
+:root {
+    --blue: #1B13C0;
+}
+
 .pink {
     color: #F72585;
 }
@@ -11,17 +15,17 @@
 }
 
 .blue {
-    color: #1B13C0;
+    color: blue;
 }
 
 .bg-blue {
     background-color: #1B13C0;
 }
 
-.bg-white{
+.bg-white {
     background-color: rgb(255, 255, 255);
 }
 
-.gray{
-    color:#777676;
+.gray {
+    color: #777676;
 }
