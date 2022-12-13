@@ -10,8 +10,11 @@ const UserLinks = () => {
 
     if (!userId) {
         return (
-            <section>
+            <section className='flex flex-column centered'>
                 <h2>Log to save your links</h2>
+                <button className='bg-pink'>
+                    Login
+                </button>
             </section>
         )
     }
