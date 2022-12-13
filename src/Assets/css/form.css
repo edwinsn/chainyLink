@@ -1,23 +1,21 @@
-.h {
-    border: 1px solid none;
-    margin-top: 5vh;
-    margin-bottom: 0;
+.contenedor {
+    margin-top: 9vh;
 }
 
 div h1 {
     color: #001233;
-    font-size: 2.4rem;
+    font-size: 1.9rem;
+    margin-bottom: 2.8rem;
 }
 
 form {
-    border: 1px solid none;
-    gap: 1.4rem;
-    
+    gap: 1.8rem; 
 }
 
 form input, form button {
-    padding: 0.8rem;
-    width: 23%;
+    font-size: 0.8rem;
+    padding: 0.6rem;
+    width: 20rem;
 }
 
 form p {
@@ -35,11 +33,10 @@ form button:hover {
 
 form button:active {
     opacity: 0.75;
-    transform: translateY(1.5px)
+    transform: translateY(1.8px)
 }
 
-.googleIcon {
-    fill: red;
+.iconGoogle {
     height: 1rem;
     margin: 0.5vh 0.4rem 0 0;
 }

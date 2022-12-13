@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import userIcon from '../../../Assets/Images/user.svg'
-import googleIcon from "../../../Assets/Images/google.svg"
-import "../assets/login.css"
+import "../../../Assets/css/form.css"
 
 export default function LoginForm({
     handleLogin,
@@ -31,8 +32,8 @@ export default function LoginForm({
     const showResetPasswordMessage = false//invalidPassword && !wasPasswordReseted
 
     return (
-        <section className='full_screen contenedor flex-column aling-center justify-center'>
-            <div className='flex-column centered h'>
+        <section className='flex-column contenedor'>
+            <div className='flex-column centered'>
                 <img src={userIcon} alt='user icon' />
                 <h1 className='text-center'>
                     Log in to save your links
@@ -70,13 +71,13 @@ export default function LoginForm({
                     onClick={handleLoginWithGoogle}
                     className='bg-white blue mb-1 '
                 >
-                    <img src={googleIcon} alt='google icon' className='googleIcon ' />
+                    <FontAwesomeIcon icon={faGoogle} className="iconGoogle" />
                     Use Google
                 </button>
             </form>
             <p className='text-center'>
                 Sin cuenta?
-                <a href='/register' className='ml-1 '>
+                <a href='/register' className='ml-1'>
                     Registrate
                 </a>
             </p>
