@@ -14,7 +14,7 @@ export default function ParentLink({ id }) {
     return (
         <div
             id='parent-link'
-            className='w-100 centered'
+            className='w-100 flex centered mb-3'
             onClick={copyLink}
         >
             <input

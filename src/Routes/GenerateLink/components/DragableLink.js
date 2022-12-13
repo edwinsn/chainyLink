@@ -43,14 +43,14 @@ export default function LinkInput({ isLast, id, index, parentLink }) {
                         ),
                         backgroundColor
                     }}
-                    className='flex-end'
+                    className='flex-end flex'
                 >
                     <img
                         src={dragIcon}
                         alt='drag link'
                     />
                     <Link
-                        className={`${isLast && 'new-link'} mt-1`}
+                        className={`${isLast && 'new-link'} mt-1 grow`}
                         position={index}
                         parentLink={parentLink}
                         isLast={isLast}

@@ -1,7 +1,15 @@
-.w-100{
+.w-100 {
     width: 100%;
 }
 
-.w-90{
+.w-90 {
     width: 90%;
+}
+
+.fs-1 {
+    font-size: 2.6em;
+}
+
+.fs-3 {
+    font-size: 1rem;
 }

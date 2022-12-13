@@ -27,6 +27,10 @@
     justify-content: flex-end;
 }
 
+.grow {
+    flex-grow: 1;
+}
+
 .mb-1 {
     margin: .5rem;
 }
@@ -45,6 +49,14 @@
 
 .my-2 {
     margin: .8rem 0;
+}
+
+.my-3 {
+    margin: 2rem 0;
+}
+
+.mb-3 {
+    margin: 0 0 2rem 0;
 }
 
 .text-center {

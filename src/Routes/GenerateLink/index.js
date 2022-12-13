@@ -22,11 +22,11 @@ export default function GenerateLink() {
 
     return (
         <section id='generate-link-section'>
-            <header className='text-center'>
+            <header className='text-center fs-1 flex centered'>
                 <img src={chainyIcon} alt='' />
-                Chain your links
+                Chain your <span className='pink'>Links</span>
             </header>
-            <h2 className='text-center'>
+            <h2 className='text-center fs-3 my-3'>
                 Share everything you want throw one single link,
                 send playlist from diferent sites, shoping cars,
                 whatever you want!
