@@ -1,3 +1,9 @@
+* {   
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 nav {
     align-items: center;
     border: 1px solid none;
@@ -5,6 +11,7 @@ nav {
     justify-content: space-between;
     height: 8vh;
     padding: 0 2em;
+    z-index: -3;
 }
 
 nav a {
@@ -14,9 +21,71 @@ nav a {
 }
 
 #icon_home {
-    height: 2.8rem;
+    height: 2.5rem;
 }
 
 p {
     display: inline-block;
 }
+
+
+.part-1 p, .parte2 li {
+    display: inline;
+}
+
+.part-1 input, label, .parte2 > li > a, .parte2 span {
+    display: none;
+}
+
+
+@media (max-width: 1200px) {
+
+    /*Menu Desplegable*/
+    label {
+        display: block;
+        font-size: 22px;
+        padding: 6px;
+        position: absolute;
+        top: 7px;
+        left: 1rem;
+        z-index: 8;
+    }
+
+    .part-1 {
+        z-index: 5;
+    }
+
+    .part-1 > a {
+        margin-left: 1.5rem;
+        z-index: 2;
+    }
+
+    .part-1 div {
+        order: -1;
+    }
+
+    .part-1 div a {
+        display: block;
+        
+    }
+
+    .part-1 ul {
+        background-color: #EDF2FB;
+        box-shadow: 2px 0 6px 0px #777676;
+        height: 100vh;
+        left: 0rem;
+        padding-top: 20vh;
+        width: 11rem;
+        transform: translateX(-125%);
+        transition: transform 0.3s ease-in-out;
+        position: absolute;
+        top: 0;
+        z-index: 5;
+    }
+
+    input:checked~ul {
+        transform: translateX(0%);
+    }
+
+}
+

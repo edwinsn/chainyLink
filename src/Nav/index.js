@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import LogOut from '../Components/LogOut';
 import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import './Assets/nav.css';
 
 export default function Nav() {
@@ -11,7 +13,7 @@ export default function Nav() {
 
     return (
         <nav>
-            <div className='flex centered'>
+            <div className='flex part-1' >
                 <Link to="/">
                     <img
                         id="icon_home"
@@ -19,25 +21,34 @@ export default function Nav() {
                         alt=''
                     />
                 </Link>
-                <Link
-                    to="/"
-                >
-                    New Link
-                </Link>
-                <Link
-                    to="/about"
-                >
-                    About
-                </Link>
-                <Link
-                    to='my-links'
-                >
-                    My links
-                </Link>
+
+                <div>
+                    <input type="checkbox" id="menu" />
+                    <label className='gray' for="menu">
+                        <FontAwesomeIcon icon={faBars} />
+                    </label>
+                    <ul>
+                        <Link
+                            to="/about"
+                        >
+                            About
+                        </Link>
+                        <Link
+                            to='my-links'
+                        >
+                            My links
+                        </Link>
+                        <Link
+                            to="/"
+                        >
+                            New Link
+                        </Link>
+                    </ul>
+                </div>
+
             </div>
             <div className='flex centered'>
                 <SearchLink />
-
                 {!userIsLogged && <Link
                     to="/login"
                 >
@@ -46,7 +57,9 @@ export default function Nav() {
                 }
                 {
                     !userIsLogged && (
-                        <Link to="/sign-up" >
+                        <Link to="/sign-up"
+                            className='ml-1'
+                        >
                             Sign up
                         </Link>
                     )
