@@ -1,4 +1,4 @@
-* {   
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -29,11 +29,15 @@ p {
 }
 
 
-.part-1 p, .parte2 li {
+.part-1 p,
+.part-2 li {
     display: inline;
 }
 
-.part-1 input, label, .parte2 > li > a, .parte2 span {
+.part-1 input,
+label,
+.part-2>li>a,
+.part-2 span {
     display: none;
 }
 
@@ -55,7 +59,7 @@ p {
         z-index: 5;
     }
 
-    .part-1 > a {
+    .part-1>a {
         margin-left: 1.5rem;
         z-index: 2;
     }
@@ -66,7 +70,7 @@ p {
 
     .part-1 div a {
         display: block;
-        
+
     }
 
     .part-1 ul {
@@ -87,5 +91,63 @@ p {
         transform: translateX(0%);
     }
 
-}
 
+    /*Menu Login*/
+
+    .part-2 li {
+        display: inline-block;
+        list-style: none;
+    }
+
+    .part-2>li,
+    .part-2 span {
+        display: inline-block;
+    }
+
+    .part-2>li>a {
+        display: block;
+        font-size: 20px;
+        padding: 10px 5px;
+    }
+
+    .part-2 li ul {
+        background-color: #EDF2FB;
+        border-radius: 7px;
+        list-style: none;
+        position: absolute;
+        max-height: 0;
+        overflow: hidden;
+        right: 0.8rem;
+        transition: max-height 0.4s linear;
+        transition: padding 0.4s linear;
+        text-align: center;
+        top: 10vh;
+        width: 200px;
+        z-index: 5;
+    }
+
+    .part-2 .login {
+        background-color: #F72585;
+        border: 1px solid lightgray;
+        border-radius: 7px;
+        color: white;
+        padding: 12px 45px;
+    }
+
+    .part-2 .login a {
+        color: white;
+        margin: 0;
+    }
+
+    .part-2 .register {
+        font-size: 13.5px;
+        margin: 0;
+    }
+
+    .part-2 li:hover ul {
+        border: 1px solid lightgray;
+        padding: 1rem;
+        max-height: 100px;
+    }
+
+}

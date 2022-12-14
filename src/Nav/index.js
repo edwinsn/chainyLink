@@ -4,7 +4,7 @@ import LogOut from '../Components/LogOut';
 import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faUser } from '@fortawesome/free-solid-svg-icons'
 import './Assets/nav.css';
 
 export default function Nav() {
@@ -47,31 +47,47 @@ export default function Nav() {
                 </div>
 
             </div>
-            <div className='flex centered'>
+            <div className='flex centered part-2'>
+
                 <SearchLink />
-                {!userIsLogged && <Link
-                    to="/login"
-                >
-                    Login
-                </Link>
-                }
-                {
-                    !userIsLogged && (
-                        <Link to="/sign-up"
-                            className='ml-1'
-                        >
-                            Sign up
-                        </Link>
-                    )
-                }
-                {
-                    userIsLogged && (
-                        <Link to='/'
-                        >
-                            <LogOut />
-                        </Link>
-                    )
-                }
+
+                <li>
+                    <a><FontAwesomeIcon icon={faUser} className="pink" /></a>
+                    <ul>
+                        <li className="login" >
+                            {!userIsLogged &&
+                                <Link
+
+                                    to="/login"
+                                >
+                                    Login
+                                </Link>
+                            }
+                        </li>
+                        <li>
+                            {
+                                !userIsLogged && (
+                                    <Link
+                                        to="/sign-up"
+                                        className='register'
+                                    >
+                                        <span>Sin Cuenta? </span>
+                                        Sign up
+                                    </Link>
+                                )
+                            }
+                            {
+                                userIsLogged && (
+                                    <Link to='/'
+                                    >
+                                        <LogOut />
+                                    </Link>
+                                )
+                            }
+                        </li>
+                    </ul>
+
+                </li>
 
             </div>
 
