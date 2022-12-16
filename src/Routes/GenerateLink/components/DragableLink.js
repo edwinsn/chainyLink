@@ -1,23 +1,20 @@
 import React from 'react'
 import { Draggable } from "react-beautiful-dnd";
 import Link from './Link';
-import dragIcon from '../../../Assets/Images/dragIcon.svg'
+
 import { useSelector } from 'react-redux';
 
 const getItemStyle = (isDragging, draggableStyle) => ({
     // some basic styles to make the items look a bit nicer
     userSelect: "none",
-    padding: grid * 2,
     margin: `0 0 ${grid}px 0`,
-
     // change background colour if dragging
     backgroundColor: isDragging ? "lightgreen" : "grey",
-
     // styles we need to apply on draggables
     ...draggableStyle
 });
 
-const grid = 8;
+const grid = 16;
 
 
 
@@ -41,20 +38,17 @@ export default function LinkInput({ isLast, id, index, parentLink }) {
                             snapshot.isDragging,
                             provided.draggableProps.style
                         ),
-                        backgroundColor
+                        backgroundColor: 'transparent'
                     }}
-                    className='flex-end flex'
+                    className='flex justify-around rounded'
                 >
-                    <img
-                        src={dragIcon}
-                        alt='drag link'
-                    />
                     <Link
-                        className={`${isLast && 'new-link'} mt-1 grow`}
+                        className={`${isLast && 'new-link'} grow`}
                         position={index}
                         parentLink={parentLink}
                         isLast={isLast}
                         id={id}
+                        backgroundColor={backgroundColor}
                     />
                 </div>
             )}

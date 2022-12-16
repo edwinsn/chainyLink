@@ -3,6 +3,27 @@
     border: 1px solid #e5e5e5;
 }
 
+.draggable-link::before {
+    content: url(../Images/dragIcon.svg);
+    margin: 0 10px;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.link-color-picker {
+    opacity: 0;
+    transition: opacity 0.5s;
+    margin: 0 10px;
+}
+
+.draggable-link:hover::before {
+    opacity: 0.9;
+}
+
+.draggable-link:hover .link-color-picker {
+    opacity: 0.9;
+}
+
 #parent-link img {
     position: relative;
     right: 3em;
@@ -16,5 +37,5 @@
     width: 10vh;
     height: 10vh;
     border-radius: 50%;
-    margin: 10vh 0 5vh 0 ;
+    margin: 10vh 0 5vh 0;
 }

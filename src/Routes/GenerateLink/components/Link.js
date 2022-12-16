@@ -10,7 +10,8 @@ export default function Link({
     position,
     parentLink,
     isLast,
-    id
+    id,
+    backgroundColor,
 }) {
 
     const handleChanged = debounce((ev) => {
@@ -28,16 +29,29 @@ export default function Link({
         if (ev.target.value === '') dispatch(removeLink())
     }
 
+    const inputStyle = {
+        color: backgroundColor ? 'white' : 'black',
+        fontWeight: backgroundColor ? 'bold' : 'normal',
+        backgroundColor: backgroundColor ? backgroundColor : 'white',
+    }
+
     return (
-        <>
+
+        <div className='w-100 draggable-link flex' >
             <input
                 placeholder={'https://'}
-                className={`${className} w-90`}
+                className={`${className} w-100`}
                 onChange={handleChanged}
                 onFocus={isLast ? onFocused : null}
                 onBlur={isLast ? onBlurred : null}
+                style={inputStyle}
             />
-            <LinkColorPicker id={id} parentLink={parentLink} position={position} />
-        </>
+            <LinkColorPicker
+                id={id}
+                parentLink={parentLink}
+                position={position}
+                className='link-color-picker'
+            />
+        </div>
     )
 }

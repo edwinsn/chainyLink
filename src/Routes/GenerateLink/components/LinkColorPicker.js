@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPalette } from '@fortawesome/free-solid-svg-icons'
 import updateLink from '../services/updateLink'
 
-export default function LinkColorPicker({ id, position, parentLink }) {
+export default function LinkColorPicker({ id, position, parentLink, className }) {
 
     const [open, setOpen] = useState(false);
 
@@ -37,7 +37,7 @@ export default function LinkColorPicker({ id, position, parentLink }) {
 
 
     return (
-        <div>
+        <div className={className}>
             <span
                 onClick={onOpenModal}
             >
