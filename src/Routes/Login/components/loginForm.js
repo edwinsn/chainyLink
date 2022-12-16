@@ -32,7 +32,7 @@ export default function LoginForm({
     const showResetPasswordMessage = false//invalidPassword && !wasPasswordReseted
 
     return (
-        <section className='flex-column contenedor'>
+        <section className='flex-column container'>
             <div className='flex-column centered'>
                 <img src={userIcon} alt='user icon' />
                 <h1 className='text-center'>

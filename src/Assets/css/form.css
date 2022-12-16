@@ -1,5 +1,6 @@
-.contenedor {
-    margin-top: 9vh;
+.container {
+    padding-top: 9vh;
+    z-index: 0;
 }
 
 div h1 {

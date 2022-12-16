@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import LogOut from '../Components/LogOut';
 import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faUser } from '@fortawesome/free-solid-svg-icons'
 import './Assets/nav.css';
 
 export default function Nav() {
@@ -11,7 +13,7 @@ export default function Nav() {
 
     return (
         <nav>
-            <div className='flex centered'>
+            <div className='flex part-1' >
                 <Link to="/">
                     <img
                         id="icon_home"
@@ -19,46 +21,73 @@ export default function Nav() {
                         alt=''
                     />
                 </Link>
-                <Link
-                    to="/"
-                >
-                    New Link
-                </Link>
-                <Link
-                    to="/about"
-                >
-                    About
-                </Link>
-                <Link
-                    to='my-links'
-                >
-                    My links
-                </Link>
+
+                <div>
+                    <input type="checkbox" id="menu" />
+                    <label className='gray' for="menu">
+                        <FontAwesomeIcon icon={faBars} />
+                    </label>
+                    <ul>
+                        <Link
+                            to="/about"
+                        >
+                            About
+                        </Link>
+                        <Link
+                            to='my-links'
+                        >
+                            My links
+                        </Link>
+                        <Link
+                            to="/"
+                        >
+                            New Link
+                        </Link>
+                    </ul>
+                </div>
+
             </div>
-            <div className='flex centered'>
+            <div className='flex centered part-2'>
+
                 <SearchLink />
 
-                {!userIsLogged && <Link
-                    to="/login"
-                >
-                    Login
-                </Link>
-                }
-                {
-                    !userIsLogged && (
-                        <Link to="/sign-up" >
-                            Sign up
-                        </Link>
-                    )
-                }
-                {
-                    userIsLogged && (
-                        <Link to='/'
-                        >
-                            <LogOut />
-                        </Link>
-                    )
-                }
+                <li>
+                    <a><FontAwesomeIcon icon={faUser} className="pink" /></a>
+                    <ul>
+                        <li className="login" >
+                            {!userIsLogged &&
+                                <Link
+
+                                    to="/login"
+                                >
+                                    Login
+                                </Link>
+                            }
+                        </li>
+                        <li>
+                            {
+                                !userIsLogged && (
+                                    <Link
+                                        to="/sign-up"
+                                        className='register'
+                                    >
+                                        <span>Sin Cuenta? </span>
+                                        Sign up
+                                    </Link>
+                                )
+                            }
+                            {
+                                userIsLogged && (
+                                    <Link to='/'
+                                    >
+                                        <LogOut />
+                                    </Link>
+                                )
+                            }
+                        </li>
+                    </ul>
+
+                </li>
 
             </div>
 
