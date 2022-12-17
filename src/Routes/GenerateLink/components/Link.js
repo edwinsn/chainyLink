@@ -29,9 +29,11 @@ export default function Link({
         if (ev.target.value === '') dispatch(removeLink())
     }
 
+    const hasBackgroundColor = backgroundColor && backgroundColor !== '#ffffff'
+
     const inputStyle = {
-        color: backgroundColor ? 'white' : 'black',
-        fontWeight: backgroundColor ? 'bold' : 'normal',
+        color: hasBackgroundColor ? 'white' : 'black',
+        fontWeight: hasBackgroundColor ? 'bold' : 'normal',
         backgroundColor: backgroundColor ? backgroundColor : 'white',
     }
 

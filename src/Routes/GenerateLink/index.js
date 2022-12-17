@@ -8,6 +8,7 @@ import LinkImage from './components/LinkImage'
 import './Assets/index.css'
 import { setBackgroundColor } from '../../reducers/features/links'
 import { useDispatch } from 'react-redux'
+import { ColorModal } from './components/ColorModal'
 
 export default function GenerateLink() {
 
@@ -35,6 +36,7 @@ export default function GenerateLink() {
             <LinkImage parentLink={newLink} />
             <BackgroundColorPicker parentLink={newLink} />
             <LinksList parentLink={newLink} />
+            <ColorModal />
         </section>
     )
 }

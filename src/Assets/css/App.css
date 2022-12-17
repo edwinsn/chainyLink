@@ -5,3 +5,7 @@
 .App {
   color: #001233;
 }
+
+.react-responsive-modal-modal{
+  background-color: #EDF2FB !important;
+}
