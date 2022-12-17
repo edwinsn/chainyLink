@@ -4,7 +4,11 @@ const defaultBackground = '#EDF2FB'
 
 export const cardsSlice = createSlice({
     name: 'links',
-    initialState: { numberOfLinks: 2, backgroundColor: defaultBackground },
+    initialState: {
+        numberOfLinks: 2,
+        backgroundColor: defaultBackground,
+        colorModal: {}
+    },
     reducers: {
         addLink: (state) => {
             state.numberOfLinks = state.numberOfLinks < 100 ? state.numberOfLinks + 1 : 100
@@ -18,6 +22,15 @@ export const cardsSlice = createSlice({
         setLinkColor: (state, action) => {
             const { id, backgroundColor } = action.payload
             state[id] = { backgroundColor }
+        },
+        setLinkWhoseColorIsBeingModified: (state, action) => {
+
+            const { position, parentLink, id } = action.payload
+            
+            state.colorModal.position = position
+            state.colorModal.parentLink = parentLink
+            state.colorModal.id = id
+
         }
     },
 })
@@ -27,6 +40,7 @@ export const {
     removeLink,
     setBackgroundColor,
     setLinkColor,
+    setLinkWhoseColorIsBeingModified
 } = cardsSlice.actions
 
 export default cardsSlice.reducer

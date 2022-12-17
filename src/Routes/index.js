@@ -1,11 +1,13 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import About from './Home';
-import Login from './Login';
-import Register from './Register';
-import GenerateLink from './GenerateLink';
-import Link from './Link'
 import Nav from '../Nav'
-import UserLinks from './UserLinks'
+import { lazy, Suspense } from 'react'
+
+const About = lazy(() => import('./Home'));
+const Login = lazy(() => import('./Login'));
+const Register = lazy(() => import('./Register'));
+const GenerateLink = lazy(() => import('./GenerateLink'));
+const Link = lazy(() => import('./Link'))
+const UserLinks = lazy(() => import('./UserLinks'))
 
 export default function App() {
 
@@ -13,15 +15,16 @@ export default function App() {
         <>
             <BrowserRouter>
                 <Nav />
-                <Routes>
-
-                    <Route path="/" element={<GenerateLink />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path='/sign-up' element={<Register />} />
-                    <Route path="/link/:id" element={<Link />} />
-                    <Route path="/my-links" element={<UserLinks />} />
-                </Routes>
+                <Suspense fallback={<div></div>}>
+                    <Routes>
+                        <Route path="/" element={<GenerateLink />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path='/sign-up' element={<Register />} />
+                        <Route path="/link/:id" element={<Link />} />
+                        <Route path="/my-links" element={<UserLinks />} />
+                    </Routes>
+                </Suspense>
             </BrowserRouter>
         </>
     );

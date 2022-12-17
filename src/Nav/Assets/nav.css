@@ -104,7 +104,7 @@ label,
         display: inline-block;
     }
 
-    .part-2>li>a {
+    #user-login-icon {
         display: block;
         font-size: 20px;
         padding: 10px 5px;

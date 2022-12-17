@@ -24,7 +24,7 @@ export default function Nav() {
 
                 <div>
                     <input type="checkbox" id="menu" />
-                    <label className='gray' for="menu">
+                    <label className='gray' htmlFor="menu">
                         <FontAwesomeIcon icon={faBars} />
                     </label>
                     <ul>
@@ -52,7 +52,9 @@ export default function Nav() {
                 <SearchLink />
 
                 <li>
-                    <a><FontAwesomeIcon icon={faUser} className="pink" /></a>
+                    <div id='user-login-icon'>
+                        <FontAwesomeIcon icon={faUser} className="pink" />
+                    </div>
                     <ul>
                         <li className="login" >
                             {!userIsLogged &&
