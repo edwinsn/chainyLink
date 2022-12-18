@@ -14,17 +14,21 @@ export default function Link({ id, content, backgroundColor }) {
 
     return (
         <div
-            className='link-container centered'
+            className='link-container flex centered rounded'
             style={style}
         >
-            <a href={content}>
+            <a
+                href={content}
+                className={`${backgroundColor === '#fffff' ? 'black' : 'white'}`}
+            >
                 {content}
             </a>
             <div className='copy-child-link-icon'>
                 <img
                     src={copied ? checkIcon : copyIcon}
                     alt='copy link'
-                    onClick={copyLink} />
+                    onClick={copyLink}
+                />
             </div>
         </div>
     )
