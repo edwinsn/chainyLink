@@ -3,6 +3,7 @@ import { storage } from '../../../fire'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import useFromLocalStorage from '../../../hooks/useFromLocalStorage'
 import updateLink from '../services/updateLink'
+import LogToSaveImageModalAndButton from './LogToSaveImageModalAndButton'
 
 export default function LinkImage({ parentLink }) {
 
@@ -10,6 +11,7 @@ export default function LinkImage({ parentLink }) {
     const [progress, setProgress] = useState(0)
     const [err, setErr] = useState(false)
     const userIsLogged = localStorage.getItem('user')
+    const [image, setImage] = useState()
 
     const uploadImage = (image) => {
 
@@ -25,7 +27,7 @@ export default function LinkImage({ parentLink }) {
         }, (res) => {
             getDownloadURL(uploadTask.snapshot.ref)
                 .then((url) => {
-
+                    setImage(url)
                     updateLink({ parentLink, newImage: url })
                         .then(() => setProgress(0))
                         .catch(() => setErr(true))
@@ -43,12 +45,24 @@ export default function LinkImage({ parentLink }) {
 
     }
 
-    if (!userIsLogged) return null
+    if (!userIsLogged) return (<LogToSaveImageModalAndButton />)
+
+    console.log({ image, progress })
 
     return (
-
-        <label className='w-100 centered my-2'>
-            Add an image {progress}
+        <label className='w-100 flex centered my-2'>
+            {image ?
+                <img
+                    src={image}
+                    id='link-image'
+                    className='bg-white my-2'
+                    alt='link' />
+                :
+                <div className='bg-white rounded p-1 small gray'>
+                    Add an image
+                </div>
+            }
+            {Boolean(progress) && progress}
             <input
                 type='file'
                 style={{ display: 'none' }}

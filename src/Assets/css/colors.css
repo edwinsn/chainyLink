@@ -6,6 +6,18 @@
     color: #F72585;
 }
 
+.gray {
+    color: #777676;
+}
+
+.black {
+    color: black;
+}
+
+.white {
+    color: white;
+}
+
 .bg-pink {
     background-color: #F72585;
 }
