@@ -38,6 +38,10 @@
     background-color: rgb(255, 255, 255);
 }
 
+.bg-gray {
+    background-color: #dadada;
+}
+
 .gray {
     color: #777676;
 }

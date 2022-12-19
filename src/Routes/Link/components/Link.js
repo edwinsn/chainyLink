@@ -19,9 +19,9 @@ export default function Link({ id, content, backgroundColor }) {
         >
             <a
                 href={content}
-                className={`${backgroundColor === '#fffff' ? 'black' : 'white'}`}
+                className={`${backgroundColor === '#ffffff' ? 'black' : 'white'}`}
             >
-                {content}
+                {content} {backgroundColor}
             </a>
             <div className='copy-child-link-icon'>
                 <img

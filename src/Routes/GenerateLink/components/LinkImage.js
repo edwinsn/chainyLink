@@ -21,21 +21,37 @@ export default function LinkImage({ parentLink }) {
 
         uploadTask.on('state_changed', (snapshot) => {
             const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+            setImage('loading')
             setProgress(progress)
         }, (err) => {
             setErr(JSON.stringify(err))
-        }, (res) => {
+        }, () => {
             getDownloadURL(uploadTask.snapshot.ref)
                 .then((url) => {
+
+                    //Remove progress after 800ms
+                    setTimeout(() => {
+                        setProgress(false)
+                    }, 800)
+
                     setImage(url)
                     updateLink({ parentLink, newImage: url })
-                        .then(() => setProgress(0))
                         .catch(() => setErr(true))
 
                 })
 
         })
 
+    }
+
+    const removeImage = (ev) => {
+
+        ev.stopPropagation()
+        ev.preventDefault()
+
+        setImage(false)
+        updateLink({ parentLink, newImage: false })
+            .catch(() => setErr(true))
     }
 
     const handleChange = (ev) => {
@@ -47,22 +63,41 @@ export default function LinkImage({ parentLink }) {
 
     if (!userIsLogged) return (<LogToSaveImageModalAndButton />)
 
-    console.log({ image, progress })
-
     return (
-        <label className='w-100 flex centered my-2'>
-            {image ?
-                <img
-                    src={image}
-                    id='link-image'
-                    className='bg-white my-2'
-                    alt='link' />
+        <label className='w-100 flex centered my-2 '>
+
+            {image || progress ?
+                <div
+                    className='relative flex-column centered'
+                    id='link-image-container'>
+                    <img
+                        src={image}
+                        id='link-image'
+                        className='my-1 flex centered bg-white pointer'
+                        alt='link' />
+                    {
+                        !Boolean(progress) && <div
+                            id='remove-link-image'
+                            className='p-1 bg-white rounded small gray pointer'
+                            onClick={removeImage}
+                        >
+                            Remove
+                        </div>
+                    }
+
+                    {Boolean(progress) && <span
+                        id='image-progress'
+                        className='rounded p-1 bg-gray'>
+                        {progress}%
+                    </span>}
+                </div>
                 :
-                <div className='bg-white rounded p-1 small gray'>
+                <div className='bg-white rounded p-1 small gray pointer'>
                     Add an image
                 </div>
             }
-            {Boolean(progress) && progress}
+
+
             <input
                 type='file'
                 style={{ display: 'none' }}

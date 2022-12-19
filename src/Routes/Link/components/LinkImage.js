@@ -4,7 +4,7 @@ export default function LinkImage({ src, name = 'L' }) {
     return (
         src ?
             <img
-                className='my-4'
+                className='my-4 bg-white'
                 src={src}
                 alt=''
                 id='link-image'

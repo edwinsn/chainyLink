@@ -37,4 +37,16 @@
     width: 10vh;
     height: 10vh;
     border-radius: 50%;
+    object-fit: contain;
+}
+
+#remove-link-image {
+    opacity: 0.8;
+}
+
+#image-progress {
+    position: absolute;
+    bottom: 3px;
+    right: 0px;
+    opacity: 0.8;
 }
