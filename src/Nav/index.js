@@ -52,9 +52,11 @@ export default function Nav() {
                 <SearchLink />
 
                 <li>
-                    <div id='user-login-icon'>
-                        <FontAwesomeIcon icon={faUser} className="pink" />
-                    </div>
+                    {
+                        !userIsLogged && <div id='user-login-icon'>
+                            <FontAwesomeIcon icon={faUser} className="pink" />
+                        </div>
+                    }
                     <ul>
                         <li className="login" >
                             {!userIsLogged &&
