@@ -14,8 +14,8 @@ nav {
     z-index: -3;
 }
 
-nav a {
-    margin: 0 0 0 1em;
+nav ul>a {
+    margin: 0 1em 0 0;
     text-decoration: none;
     color: var(--blue);
 }
