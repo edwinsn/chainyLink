@@ -4,7 +4,8 @@ import LogOut from '../Components/LogOut';
 import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCaretRight, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
 import './Assets/nav.css';
 
 export default function Nav() {
@@ -24,27 +25,35 @@ export default function Nav() {
 
                 <div>
                     <input type="checkbox" id="menu" />
-                    <label className='gray' htmlFor="menu">
+                    <label className='gray' for="menu">
                         <FontAwesomeIcon icon={faBars} />
                     </label>
                     <ul>
+                        <section id="ote"></section>
                         <Link
                             to="/about"
                         >
+                            <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
                             About
                         </Link>
                         <Link
                             to='my-links'
+
                         >
+                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
                             My links
                         </Link>
                         <Link
                             to="/"
+
                         >
+                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
                             New Link
                         </Link>
+
                     </ul>
                 </div>
+
 
             </div>
             <div className='flex centered part-2'>
@@ -53,15 +62,15 @@ export default function Nav() {
 
                 <li>
                     {
-                        !userIsLogged && <div id='user-login-icon'>
+                        !userIsLogged &&
+                        <a id='user-login-icon'>
                             <FontAwesomeIcon icon={faUser} className="pink" />
-                        </div>
+                        </a>
                     }
                     <ul>
                         <li className="login" >
                             {!userIsLogged &&
                                 <Link
-
                                     to="/login"
                                 >
                                     Login
@@ -80,19 +89,17 @@ export default function Nav() {
                                     </Link>
                                 )
                             }
-                            {
-                                userIsLogged && (
-                                    <Link to='/'
-                                    >
-                                        <LogOut />
-                                    </Link>
-                                )
-                            }
                         </li>
                     </ul>
-
                 </li>
-
+                {
+                    userIsLogged && (
+                        <Link to='/'
+                        >
+                            <LogOut />
+                        </Link>
+                    )
+                }
             </div>
 
         </nav>
