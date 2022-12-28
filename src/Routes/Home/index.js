@@ -1,7 +1,6 @@
 import '../../Assets/css/App.css';
 import hero_image from '../../Assets/Images/Frame-1.svg';
 import icon_decoration from '../../Assets/Images/icon_decoration.svg';
-import { Link } from 'react-router-dom';
 import './index.css';
 
 function Home() {
@@ -20,13 +19,9 @@ function Home() {
                         Send you favory playlist from diferent sites,
                         your social networks or just a shhopping car from diferent stores!
                     </h2>
-                    <Link to='/'>
-                        <button
-                            className='bg-pink w-100'
-                            id='chain-links-button'>
-                            Chain links!
-                        </button>
-                    </Link>
+                    <button className='bg-pink' >
+                        Chain links!
+                    </button>
                 </div>
                 <img
                     id='hero_image'
