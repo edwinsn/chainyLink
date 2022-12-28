@@ -5,7 +5,7 @@ import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCaretRight, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
-import { faUser, faCircleQuestion } from '@fortawesome/free-regular-svg-icons'
+import { faUser } from '@fortawesome/free-regular-svg-icons'
 import './Assets/nav.css';
 
 export default function Nav() {
@@ -63,7 +63,7 @@ export default function Nav() {
                 <li>
                     {
                         !userIsLogged &&
-                        <a id='user-login-icon'>
+                        <a id='user-login-icon' href='/'>
                             <FontAwesomeIcon icon={faUser} className="pink" />
                         </a>
                     }
