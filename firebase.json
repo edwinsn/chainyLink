@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+    "site":"chainy-link",
     "ignore": [
       "firebase.json",
       "**/.*",
