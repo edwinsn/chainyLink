@@ -1,4 +1,5 @@
 {
+  "description": "App to group links, use it a portfolio, a shoping list..",
   "engines": {
     "node": "16.15.0"
   },
