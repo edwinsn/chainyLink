@@ -1,1 +1,1 @@
-module.exports.REACT_APP_API_URL = 'https://api.chainylink.com'
+module.exports.REACT_APP_API_URL = 'http://api.chainylink.com'

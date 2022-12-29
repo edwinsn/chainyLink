@@ -25,7 +25,7 @@ export default function Nav() {
 
                 <div>
                     <input type="checkbox" id="menu" />
-                    <label className='gray' for="menu">
+                    <label className='gray' htmlFor="menu">
                         <FontAwesomeIcon icon={faBars} />
                     </label>
                     <ul>
