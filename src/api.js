@@ -1,1 +1,1 @@
-module.exports.REACT_APP_API_URL = 'http://api.chainylink.com'
+module.exports.REACT_APP_API_URL = 'https://us-central1-chainy-link.cloudfunctions.net/app'
