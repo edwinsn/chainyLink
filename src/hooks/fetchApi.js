@@ -1,12 +1,12 @@
 import axios from 'axios';
+import { REACT_APP_API_URL} from '../api'
 
 export default function fetchApi(url, params) {
 
-    const api = process.env.REACT_APP_API_URL
 
     const controller = new AbortController();
     const signal = controller.signal
-    const endpoint = `${api}${url}`
+    const endpoint = `${REACT_APP_API_URL}${url}`
 
     const dataPromise = axios.get(endpoint,
         {
