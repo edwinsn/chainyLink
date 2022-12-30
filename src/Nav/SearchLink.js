@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import './Assets/searchbar.css';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-export default function SearchLink() {
+export default function SearchLink({ className }) {
 
     const navigate = useNavigate();
 

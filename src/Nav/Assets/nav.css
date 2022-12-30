@@ -15,7 +15,6 @@ nav {
 }
 
 nav ul>a {
-    margin: 0 1em 0 0;
     text-decoration: none;
     color: var(--blue);
 }
@@ -78,7 +77,8 @@ label,
         box-shadow: 2px 0 6px 0px #777676;
         height: 100vh;
         left: 0rem;
-        padding-top: 20vh;
+        padding-top: 10vh;
+        padding-left: 5vh;
         width: 11rem;
         transform: translateX(-125%);
         transition: transform 0.3s ease-in-out;

@@ -29,14 +29,15 @@ export default function Nav() {
                         <FontAwesomeIcon icon={faBars} />
                     </label>
                     <ul>
-                        <section id="ote"></section>
                         <Link
+                            className='mx-1 my-2'
                             to="/about"
                         >
                             <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
                             About
                         </Link>
                         <Link
+                            className='mx-1 my-2'
                             to='my-links'
 
                         >
@@ -45,7 +46,7 @@ export default function Nav() {
                         </Link>
                         <Link
                             to="/"
-
+                            className='mx-1 my-2'
                         >
                             <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
                             New Link
@@ -58,17 +59,21 @@ export default function Nav() {
             </div>
             <div className='flex centered part-2'>
 
-                <SearchLink />
+                <SearchLink className='mx-1' />
 
                 <li>
                     {
                         !userIsLogged &&
-                        <a id='user-login-icon' href='/'>
+                        <a
+                            id='user-login-icon'
+                            href='/'
+                            className='mx-1'
+                        >
                             <FontAwesomeIcon icon={faUser} className="pink" />
                         </a>
                     }
                     <ul>
-                        <li className="login" >
+                        <li className="login mx-1" >
                             {!userIsLogged &&
                                 <Link
                                     to="/login"
@@ -77,7 +82,7 @@ export default function Nav() {
                                 </Link>
                             }
                         </li>
-                        <li>
+                        <li className='mx-1'>
                             {
                                 !userIsLogged && (
                                     <Link
