@@ -89,7 +89,7 @@ export default function Nav() {
                                         to="/sign-up"
                                         className='register'
                                     >
-                                        <span>Sin Cuenta? </span>
+                                        <span className='mt-1 mr-1'>Sin Cuenta? </span>
                                         Sign up
                                     </Link>
                                 )

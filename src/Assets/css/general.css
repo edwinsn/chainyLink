@@ -2,8 +2,10 @@
     --small-text: 15px;
     --medium-text: 18px;
     --large-text: 22px;
-    --really-large-text:32px;
-    --normal-rounded:10px;
+    --really-large-text: 32px;
+    --normal-rounded: 10px;
+    --fast-transition: 300ms;
+    --slow-transition: 500ms;
 }
 
 .rounded {

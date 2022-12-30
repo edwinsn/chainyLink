@@ -81,7 +81,7 @@ label,
         padding-left: 5vh;
         width: 11rem;
         transform: translateX(-125%);
-        transition: transform 0.3s ease-in-out;
+        transition: transform var(--fast-transition) ease-in-out;
         position: absolute;
         top: 0;
         z-index: 5;
@@ -118,8 +118,8 @@ label,
         max-height: 0;
         overflow: hidden;
         right: 0.8rem;
-        transition: max-height 0.4s linear;
-        transition: padding 0.4s linear;
+        transition: max-height var(--fast-transition) linear;
+        transition: padding var(--fast-transition) linear;
         text-align: center;
         top: 10vh;
         width: 200px;
