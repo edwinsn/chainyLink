@@ -1,7 +1,7 @@
 import useUserLinks from './hooks/useUserLinks'
 import LinksList from './components/LinksList'
 import useFromLocalStorage from '../../hooks/useFromLocalStorage'
-
+import userIcon from '../../Assets/Images/user.svg'
 
 const UserLinks = () => {
 
@@ -11,10 +11,15 @@ const UserLinks = () => {
     if (!userId) {
         return (
             <section className='flex flex-column centered'>
-                <h2>Log to save your links</h2>
-                <button className='bg-pink'>
+                <img alt='' src={userIcon} />
+                <h2 className='my-2'>
+                    Log to save your links
+                </h2>
+                <a
+                    href='/login'
+                    className='bg-pink btn'>
                     Login
-                </button>
+                </a>
             </section>
         )
     }

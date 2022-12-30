@@ -1,3 +1,11 @@
+:root {
+    --small-text: 15px;
+    --medium-text: 18px;
+    --large-text: 22px;
+    --really-large-text:32px;
+    --normal-rounded:10px;
+}
+
 .rounded {
     border-radius: 10px;
 }
