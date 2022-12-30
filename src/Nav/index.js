@@ -11,6 +11,11 @@ import './Assets/nav.css';
 export default function Nav() {
 
     const userIsLogged = localStorage.getItem('user')
+    const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false)
+
+    const closeSidebar = () => {
+        setSideBarIsOpen(false)
+    }
 
     return (
         <nav>
@@ -27,6 +32,8 @@ export default function Nav() {
                     <input
                         type="checkbox"
                         id="menu"
+                        onChange={() => setSideBarIsOpen(!sideBarIsOpen)}
+                        checked={sideBarIsOpen}
                     />
                     <label
                         className='gray pointer'
@@ -42,6 +49,7 @@ export default function Nav() {
                     </label>
                     <ul>
                         <Link
+                            onClick={closeSidebar}
                             className='mx-1 my-2'
                             to="/about"
                         >
@@ -51,6 +59,7 @@ export default function Nav() {
                             </span>
                         </Link>
                         <Link
+                            onClick={closeSidebar}
                             className='mx-1 my-2'
                             to='my-links'
 
@@ -61,6 +70,7 @@ export default function Nav() {
                             </span>
                         </Link>
                         <Link
+                            onClick={closeSidebar}
                             to="/"
                             className='my-2'
                         >
