@@ -15,7 +15,7 @@ export default function Nav() {
     return (
         <nav>
             <div className='flex part-1' >
-                <Link to="/">
+                <Link to="/" className='mx-1'>
                     <img
                         id="icon_home"
                         src={icon_home}
@@ -23,33 +23,51 @@ export default function Nav() {
                     />
                 </Link>
 
-                <div>
-                    <input type="checkbox" id="menu" />
-                    <label className='gray' htmlFor="menu">
+                <div className=''>
+                    <input
+                        type="checkbox"
+                        id="menu"
+                    />
+                    <label
+                        className='gray pointer'
+                        htmlFor="menu"
+                    >
                         <FontAwesomeIcon icon={faBars} />
+                    </label>
+                    <label
+                        id='close-sidebar-backgorund'
+                        className='d-none full_screen p-absolute'
+                        htmlFor="menu"
+                    >
                     </label>
                     <ul>
                         <Link
                             className='mx-1 my-2'
                             to="/about"
                         >
-                            <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
-                            About
+                            <span className='mx-1'>
+                                <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
+                                About
+                            </span>
                         </Link>
                         <Link
                             className='mx-1 my-2'
                             to='my-links'
 
                         >
-                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
-                            My links
+                            <span className='mx-1'>
+                                <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                                My links
+                            </span>
                         </Link>
                         <Link
                             to="/"
-                            className='mx-1 my-2'
+                            className='my-2'
                         >
-                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
-                            New Link
+                            <span className='mx-1'>
+                                <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                                New Link
+                            </span>
                         </Link>
 
                     </ul>
@@ -67,7 +85,7 @@ export default function Nav() {
                         <a
                             id='user-login-icon'
                             href='/'
-                            className='mx-1'
+                            className='ml-1'
                         >
                             <FontAwesomeIcon icon={faUser} className="pink" />
                         </a>

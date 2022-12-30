@@ -31,6 +31,10 @@
     flex-grow: 1;
 }
 
+.gap-1 {
+    gap: .4rem;
+}
+
 .mb-1 {
     margin: .5rem;
 }
@@ -89,6 +93,14 @@
 
 .p-4 {
     padding: 2rem;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.p-relative {
+    position: relative;
 }
 
 .text-center {
