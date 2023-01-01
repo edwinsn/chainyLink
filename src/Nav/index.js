@@ -8,55 +8,65 @@ import { faCaretRight, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import './Assets/nav.css';
 import TransformOnSidebarOnPhone from './TransformOnSidebarOnPhone';
+import useIsPhoneView from '../hooks/useIsPhoneView';
 
 export default function Nav() {
 
     const userIsLogged = localStorage.getItem('user')
+    const isPhoneView = useIsPhoneView()
 
+    let sideBarAndIcon = [
+        <Link to="/" className='mx-1'>
+            <img
+                id="icon_home"
+                src={icon_home}
+                alt=''
+            />
+        </Link>,
+        <TransformOnSidebarOnPhone>
+
+            <Link
+                className='mx-1 my-2'
+                to="/about"
+            >
+                <span className='mx-1'>
+                    <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
+                    About
+                </span>
+            </Link>
+            <Link
+                className='mx-1 my-2'
+                to='my-links'
+
+            >
+                <span className='mx-1'>
+                    <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                    My links
+                </span>
+            </Link>
+            <Link
+                to="/"
+                className='my-2'
+            >
+                <span className='mx-1'>
+                    <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                    New Link
+                </span>
+            </Link>
+
+        </TransformOnSidebarOnPhone>
+    ]
+
+    if (isPhoneView) sideBarAndIcon = sideBarAndIcon.reverse()
+
+    console.log({ sideBarAndIcon })
 
     return (
         <nav>
             <div className='flex part-1' >
 
-                <TransformOnSidebarOnPhone>
+                {sideBarAndIcon}
 
-                    <Link
-                        className='mx-1 my-2'
-                        to="/about"
-                    >
-                        <span className='mx-1'>
-                            <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
-                            About
-                        </span>
-                    </Link>
-                    <Link
-                        className='mx-1 my-2'
-                        to='my-links'
-
-                    >
-                        <span className='mx-1'>
-                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
-                            My links
-                        </span>
-                    </Link>
-                    <Link
-                        to="/"
-                        className='my-2'
-                    >
-                        <span className='mx-1'>
-                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
-                            New Link
-                        </span>
-                    </Link>
-
-                </TransformOnSidebarOnPhone>
-                <Link to="/" className='mx-1'>
-                    <img
-                        id="icon_home"
-                        src={icon_home}
-                        alt=''
-                    />
-                </Link>
             </div>
             <div className='flex centered part-2'>
 
