@@ -40,119 +40,65 @@ label,
     display: none;
 }
 
-
-@media (max-width: 1200px) {
-
-    /*Menu Desplegable*/
-    label {
-        display: block;
-        font-size: 22px;
-        padding: 6px;
-        position: relative;
-        z-index: 8;
-    }
-
-    .part-1 {
-        z-index: 5;
-    }
-
-    .part-1>a {
-        z-index: 2;
-    }
-
-    .part-1 div {
-        order: -1;
-    }
-
-    .part-1 div a {
-        display: block;
-
-    }
-
-    .part-1 ul {
-        background-color: #EDF2FB;
-        box-shadow: 2px 0 6px 0px #777676;
-        height: 100vh;
-        left: 0rem;
-        padding-top: 10vh;
-        padding-left: 5vh;
-        width: 80%;
-        max-width: 7cm;
-        transform: translateX(-125%);
-        transition: transform var(--fast-transition) ease-in-out;
-        position: absolute;
-        top: 0;
-        z-index: 5;
-    }
-
-    input:checked~ul {
-        transform: translateX(0%);
-    }
-
-    input:checked~#close-sidebar-backgorund {
-        display: block;
-        background-color: #cccccc10;
-        z-index: 2;
-        top: 0;
-    }
+.part-1 {
+    z-index: 5;
+}
 
 
-    /*Menu Login*/
+/*Menu Login*/
 
-    .part-2 li {
-        display: inline-block;
-        list-style: none;
-    }
+.part-2 li {
+    display: inline-block;
+    list-style: none;
+}
 
-    .part-2>li,
-    .part-2 span {
-        display: inline-block;
-    }
+.part-2>li,
+.part-2 span {
+    display: inline-block;
+}
 
-    #user-login-icon {
-        display: block;
-        font-size: 20px;
-        padding: 10px 5px;
-    }
+#user-login-icon {
+    display: block;
+    font-size: 20px;
+    padding: 10px 5px;
+}
 
-    .part-2 li ul {
-        background-color: #EDF2FB;
-        border-radius: 7px;
-        list-style: none;
-        position: absolute;
-        max-height: 0;
-        overflow: hidden;
-        right: 0.8rem;
-        transition: max-height var(--fast-transition) linear;
-        transition: padding var(--fast-transition) linear;
-        text-align: center;
-        top: 10vh;
-        width: 200px;
-        z-index: 5;
-    }
+.part-2 li ul {
+    background-color: #EDF2FB;
+    border-radius: 7px;
+    list-style: none;
+    position: absolute;
+    max-height: 0;
+    overflow: hidden;
+    right: 0.8rem;
+    transition: max-height var(--fast-transition) linear;
+    transition: padding var(--fast-transition) linear;
+    text-align: center;
+    top: 10vh;
+    width: 200px;
+    z-index: 5;
+}
 
-    .part-2 .login {
-        background-color: #F72585;
-        border: 1px solid lightgray;
-        border-radius: 7px;
-        color: white;
-        padding: 12px 45px;
-    }
+.part-2 .login {
+    background-color: #F72585;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    color: white;
+    padding: 12px 45px;
+}
 
-    .part-2 .login a {
-        color: white;
-        margin: 0;
-    }
+.part-2 .login a {
+    color: white;
+    margin: 0;
+}
 
-    .part-2 .register {
-        font-size: 13.5px;
-        margin: 0;
-    }
+.part-2 .register {
+    font-size: 13.5px;
+    margin: 0;
+}
 
-    .part-2 li:hover ul {
-        border: 1px solid lightgray;
-        padding: 1rem;
-        max-height: 100px;
-    }
-
+.part-2 li:hover ul {
+    border: 1px solid lightgray;
+    padding: 1rem;
+    max-height: 100px;
 }

@@ -4,22 +4,52 @@ import LogOut from '../Components/LogOut';
 import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCaretRight, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { faCaretRight, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import './Assets/nav.css';
+import TransformOnSidebarOnPhone from './TransformOnSidebarOnPhone';
 
 export default function Nav() {
 
     const userIsLogged = localStorage.getItem('user')
-    const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false)
 
-    const closeSidebar = () => {
-        setSideBarIsOpen(false)
-    }
 
     return (
         <nav>
             <div className='flex part-1' >
+
+                <TransformOnSidebarOnPhone>
+
+                    <Link
+                        className='mx-1 my-2'
+                        to="/about"
+                    >
+                        <span className='mx-1'>
+                            <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
+                            About
+                        </span>
+                    </Link>
+                    <Link
+                        className='mx-1 my-2'
+                        to='my-links'
+
+                    >
+                        <span className='mx-1'>
+                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                            My links
+                        </span>
+                    </Link>
+                    <Link
+                        to="/"
+                        className='my-2'
+                    >
+                        <span className='mx-1'>
+                            <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                            New Link
+                        </span>
+                    </Link>
+
+                </TransformOnSidebarOnPhone>
                 <Link to="/" className='mx-1'>
                     <img
                         id="icon_home"
@@ -27,63 +57,6 @@ export default function Nav() {
                         alt=''
                     />
                 </Link>
-
-                <div className=''>
-                    <input
-                        type="checkbox"
-                        id="menu"
-                        onChange={() => setSideBarIsOpen(!sideBarIsOpen)}
-                        checked={sideBarIsOpen}
-                    />
-                    <label
-                        className='gray pointer'
-                        htmlFor="menu"
-                    >
-                        <FontAwesomeIcon icon={faBars} />
-                    </label>
-                    <label
-                        id='close-sidebar-backgorund'
-                        className='d-none full_screen p-absolute'
-                        htmlFor="menu"
-                    >
-                    </label>
-                    <ul>
-                        <Link
-                            onClick={closeSidebar}
-                            className='mx-1 my-2'
-                            to="/about"
-                        >
-                            <span className='mx-1'>
-                                <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
-                                About
-                            </span>
-                        </Link>
-                        <Link
-                            onClick={closeSidebar}
-                            className='mx-1 my-2'
-                            to='my-links'
-
-                        >
-                            <span className='mx-1'>
-                                <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
-                                My links
-                            </span>
-                        </Link>
-                        <Link
-                            onClick={closeSidebar}
-                            to="/"
-                            className='my-2'
-                        >
-                            <span className='mx-1'>
-                                <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
-                                New Link
-                            </span>
-                        </Link>
-
-                    </ul>
-                </div>
-
-
             </div>
             <div className='flex centered part-2'>
 
