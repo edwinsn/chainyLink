@@ -91,6 +91,15 @@
     padding: .4rem;
 }
 
+.px-1 {
+    padding: 0 .4rem;
+}
+
+
+.px-2 {
+    padding: 0 .8em;
+}
+
 .p-4 {
     padding: 2rem;
 }
@@ -118,4 +127,8 @@
 .full_screen {
     width: 100vw;
     height: 95vh;
+}
+
+.wrap {
+    flex-wrap: wrap;
 }

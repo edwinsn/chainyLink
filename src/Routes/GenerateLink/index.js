@@ -9,11 +9,13 @@ import './Assets/index.css'
 import { setBackgroundColor } from '../../reducers/features/links'
 import { useDispatch } from 'react-redux'
 import { ColorModal } from './components/ColorModal'
+import useIsPhoneView from '../../hooks/useIsPhoneView'
 
 export default function GenerateLink() {
 
     const [newLink] = useNewLink()
     const dispatch = useDispatch()
+    const isPhoneView = useIsPhoneView()
 
     useEffect(() => {
 
@@ -23,11 +25,20 @@ export default function GenerateLink() {
 
     return (
         <section id='generate-link-section'>
-            <header className='text-center fs-1 flex centered'>
-                <img src={chainyIcon} alt='' />
-                Chain your <span className='pink'>Links</span>
+            <header className='flex wrap centered fs-1 px-2'>
+                <img
+                    src={chainyIcon}
+                    alt=''
+                    style={{ height: isPhoneView && '1.35em' }}
+                />
+                <span className='text-center'>
+                    Chain your
+                    <span className='pink ml-1'>
+                        Links
+                    </span>
+                </span>
             </header>
-            <h2 className='text-center fs-3 my-3'>
+            <h2 className='text-center fs-3 my-3 px-1'>
                 Share everything you want throw one single link,
                 send playlist from diferent sites, shoping cars,
                 whatever you want!

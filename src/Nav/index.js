@@ -14,23 +14,28 @@ export default function Nav() {
 
     const userIsLogged = localStorage.getItem('user')
     const isPhoneView = useIsPhoneView()
+    const stopPropagation = (ev) => ev.preventDefault();
 
     let sideBarAndIcon = [
-        <Link to="/" className='mx-1'>
+        <Link
+            to="/"
+            className='mx-1'
+            key='chainy-icon'
+        >
             <img
                 id="icon_home"
                 src={icon_home}
                 alt=''
             />
         </Link>,
-        <TransformOnSidebarOnPhone>
+        <TransformOnSidebarOnPhone key='nav-part-1'>
 
             <Link
                 className='mx-1 my-2'
                 to="/about"
             >
                 <span className='mx-1'>
-                    <FontAwesomeIcon icon={faCircleInfo} className="icon_barra" />
+                    <FontAwesomeIcon icon={faCircleInfo} className="icon_barra mr-1" />
                     About
                 </span>
             </Link>
@@ -40,7 +45,7 @@ export default function Nav() {
 
             >
                 <span className='mx-1'>
-                    <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                    <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
                     My links
                 </span>
             </Link>
@@ -49,7 +54,7 @@ export default function Nav() {
                 className='my-2'
             >
                 <span className='mx-1'>
-                    <FontAwesomeIcon icon={faCaretRight} className="icon_barra" />
+                    <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
                     New Link
                 </span>
             </Link>
@@ -58,8 +63,6 @@ export default function Nav() {
     ]
 
     if (isPhoneView) sideBarAndIcon = sideBarAndIcon.reverse()
-
-    console.log({ sideBarAndIcon })
 
     return (
         <nav>
@@ -75,13 +78,13 @@ export default function Nav() {
                 <li>
                     {
                         !userIsLogged &&
-                        <a
+                        <div
                             id='user-login-icon'
-                            href='/'
-                            className='ml-1'
+                            onClick={stopPropagation}
+                            className='ml-1 pointer'
                         >
                             <FontAwesomeIcon icon={faUser} className="pink" />
-                        </a>
+                        </div>
                     }
                     <ul>
                         <li className="login mx-1" >
