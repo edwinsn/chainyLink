@@ -5,6 +5,8 @@ export default function Link({ id, content, backgroundColor }) {
 
     const style = { backgroundColor }
 
+    let isThereBackground = (backgroundColor === '#ffffff' || !backgroundColor)
+
     return (
         <div
             className='link-container flex centered rounded'
@@ -12,9 +14,9 @@ export default function Link({ id, content, backgroundColor }) {
         >
             <a
                 href={content}
-                className={`${backgroundColor === '#ffffff' ? 'black' : 'white'}`}
+                className={`${isThereBackground ? 'black' : 'white'}`}
             >
-                {content} {backgroundColor}
+                {content}
             </a>
             <CopiableText text={content} />
         </div>
