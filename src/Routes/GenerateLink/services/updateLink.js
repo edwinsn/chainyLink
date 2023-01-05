@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { REACT_APP_API_URL} from '../../../api'
 
 export default function updateLink({
     parentLink,
@@ -9,9 +10,8 @@ export default function updateLink({
     newImage
 }) {
 
-    const api = process.env.REACT_APP_API_URL
 
-    return axios.patch(`${api}/links/${parentLink}`, {
+    return axios.patch(`${REACT_APP_API_URL}/links/${parentLink}`, {
         positionToModify,
         newLinkText,
         background,
