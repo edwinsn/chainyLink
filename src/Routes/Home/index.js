@@ -7,29 +7,38 @@ function Home() {
 
     return (
         <div className="App">
-            <section className='main full_screen big-gap'>
+            <section className='main flex centered'>
                 <div className='flex-column' id='hero_text'>
-                    <h1>
-                        <img src={icon_decoration} id="icon_decoration" alt='' />
-                        Share your
-                        <span className='blue'> Links </span>
-                        at once
+                    <h1 className='align-items-center'>
+                        <span>
+                            <img src={icon_decoration} alt='' />
+                            Share your
+                        </span> <br /> <span className='blue'>
+                            Links
+                        </span> at once
                     </h1>
-                    <h2>
+                    <h2 className='my-3'>
                         Send you favory playlist from diferent sites,
                         your social networks or just a shhopping car from diferent stores!
                     </h2>
-                    <button className='bg-pink' >
+                    <a
+                        href='/'
+                        className='btn bg-pink text-center mt-1 mb-2'
+                    >
                         Chain links!
-                    </button>
+                    </a>
                 </div>
-                <img
+                <div
+                    className='flex centered'
                     id='hero_image'
-                    src={hero_image}
-                    alt='Links betten all your platforms' />
+                >
+                    <img
+                        src={hero_image}
+                        alt='Links betten all your platforms' />
+                </div>
             </section>
 
-        </div>
+        </div >
     );
 }
 

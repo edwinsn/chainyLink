@@ -17,6 +17,10 @@
     flex-direction: column;
 }
 
+.inline-flex {
+    display: inline-flex;
+}
+
 .flex {
     display: flex;
     align-items: center;
