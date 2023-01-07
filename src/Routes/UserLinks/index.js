@@ -34,8 +34,7 @@ const UserLinks = () => {
 
 
     return (
-
-        <section className='flex-column centered'>
+        <section className='flex-column justify-center'>
             <LinksList
                 links={userLinks}
             />
