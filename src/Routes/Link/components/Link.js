@@ -18,7 +18,12 @@ export default function Link({ id, content, backgroundColor }) {
             >
                 {content}
             </a>
-            <CopiableText text={content} />
+            <div className='copy-child-link-icon flex'>
+                <CopiableText
+                    text={content}
+                    putAtSide={false}
+                />
+            </div>
         </div>
     )
 

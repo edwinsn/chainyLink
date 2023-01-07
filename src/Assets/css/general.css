@@ -12,6 +12,10 @@
     border-radius: 10px;
 }
 
+.circle-rounded{
+    border-radius: 30px;
+}
+
 .pointer {
     cursor: pointer;
 }

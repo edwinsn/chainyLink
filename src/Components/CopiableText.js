@@ -1,9 +1,9 @@
 import React from 'react'
-import copyIcon from '../Assets/Images/copyIcon.svg'
-import checkIcon from '../Assets/Images/checkIcon.svg'
+import { faCopy } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-
-export default function CopiableText({ text }) {
+export default function CopiableText({ text, putAtSide = true }) {
 
     const [copied, setCopied] = React.useState(false)
 
@@ -13,12 +13,13 @@ export default function CopiableText({ text }) {
     }
 
     return (
-        <div className='copy-child-link-icon'>
-            <img
-                src={copied ? checkIcon : copyIcon}
-                alt='copy link'
-                onClick={copyLink}
-            />
+        <div
+            className={(putAtSide && 'copy-child-link-icon') + 'mx-1'}
+            onClick={copyLink}
+        >
+            <FontAwesomeIcon
+                icon={copied ? faCheck : faCopy}
+                className="mr-1" />
         </div>
     )
 }

@@ -95,13 +95,18 @@
     padding: .4rem;
 }
 
-.px-1 {
-    padding: 0 .4rem;
+.py-1 {
+    padding-top: .4rem;
+    padding-bottom: .4rem;
 }
 
-
 .px-2 {
-    padding: 0 .8em;
+    padding-left: .8rem;
+    padding-right: .8rem;
+}
+
+.px-1 {
+    padding: 0 .4rem;
 }
 
 .p-4 {
@@ -122,6 +127,10 @@
 
 .justify-center {
     justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
 }
 
 .big-gap {
