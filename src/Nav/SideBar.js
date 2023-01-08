@@ -34,6 +34,8 @@ export default function SideBar({ open, setOpen, children }) {
                 onSetOpen={setOpen}
                 styles={styles}
                 rootClassName='sidebar_root_container'
+                rootId="part-1"
+                
             >
                 <span></span>
             </Sidebar>
