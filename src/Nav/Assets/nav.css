@@ -27,21 +27,29 @@ p {
     display: inline-block;
 }
 
+/*Barra Lateral*/
 
-.part-1 p,
-.part-2 li {
-    display: inline;
-}
 
-.part-1 input,
-label,
-.part-2>li>a,
-.part-2 span {
+.part-1 .icon_barra {
     display: none;
 }
 
+
 .part-1 {
     z-index: 5;
+}
+
+.part-1 #name-app {
+    background-color: none;
+    border: none;
+    display: none;
+    font-size: 19px;
+    padding: 20px 0 0 35px;
+}
+
+#part-1 #name-app:hover {
+    background-color: transparent;
+    border: none;
 }
 
 
@@ -79,7 +87,7 @@ label,
     z-index: 5;
 }
 
-.part-2 .login {
+.part-2 #login {
     background-color: #F72585;
     border: 1px solid lightgray;
     border-radius: 7px;
@@ -87,12 +95,12 @@ label,
     padding: 12px 45px;
 }
 
-.part-2 .login a {
+.part-2 #login a {
     color: white;
     margin: 0;
 }
 
-.part-2 .register {
+.part-2 #register {
     font-size: 13.5px;
     margin: 0;
 }
@@ -101,4 +109,46 @@ label,
     border: 1px solid lightgray;
     padding: 1rem;
     max-height: 100px;
+}
+
+@media (max-width: 700px) { 
+
+    /*Barra Lateral*/  
+
+    /*part-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 8vh;
+    }*/
+
+    #part-1 a {
+        border: 1px solid white;
+        font-size: 15.5px;
+        padding: 9px 3.3rem 9px 1.8rem;
+        margin-bottom: 4vh;
+    }
+
+    #part-1 a:hover {
+        background-color: #F72585;
+        border: 1px solid lightgray;
+        color: white;
+    }
+
+    #part-1 a:hover .icon_barra {
+        color: white;
+    }
+
+    #part-1 .icon_barra {
+        display: inline;
+        color: #fd6dae
+    }
+
+    #part-1 .a {
+        margin-top: 15vh;
+    }
+
+    .part-1 #name-app {
+        display: inline-block;
+    }
+
 }
