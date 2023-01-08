@@ -33,7 +33,7 @@ export default function useFireBaseLogin() {
 
     const handleSignUpWithEmail = (email, password, callBack) => {
 
-        createUserWithEmailAndPassword(auth, email, password)
+        return createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 callBack(userCredential)
             })
@@ -42,10 +42,13 @@ export default function useFireBaseLogin() {
                 switch (err.code) {
                     case "auth/user-exists-with-different-credential":
                         setShowUserRegisteredText(true)
-                        setErrors({ ...errors, passwordError: err.message })
+                        setErrors({ ...errors, passwordError: err.code })
+                        break;
+                    case "auth/email-already-in-use":
+                        setErrors({ ...errors, emailError: 'Email already used' })
                         break;
                     default:
-                        setErrors({ ...errors, emailError: err.message })
+                        setErrors({ ...errors, emailError: err.code })
                 }
             })
 
@@ -53,7 +56,7 @@ export default function useFireBaseLogin() {
 
     const handleSignUpWithGoogle = (callBack) => {
 
-        signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider)
             .then((userCredential) => {
                 callBack(userCredential)
             })

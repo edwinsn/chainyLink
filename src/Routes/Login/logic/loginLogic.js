@@ -33,7 +33,7 @@ export default function useFireBaseLogin() {
 
     const handleLoginWithEmail = (email, password, callBack) => {
 
-        signInWithEmailAndPassword(auth, email, password)
+        return signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 callBack(userCredential)
             })
@@ -54,7 +54,7 @@ export default function useFireBaseLogin() {
 
     const handleLoginWithGoogle = (callBack) => {
 
-        signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider)
             .then((userCredential) => {
                 callBack(userCredential)
             })
@@ -65,7 +65,7 @@ export default function useFireBaseLogin() {
     }
 
     const handleResetPassword = (email) => {
-        resetPassword({ auth, email })
+        return resetPassword({ auth, email })
     }
 
     return {

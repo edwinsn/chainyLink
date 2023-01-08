@@ -1,0 +1,19 @@
+
+.loading-button.bg-pink{
+    background: linear-gradient(90deg, var(--pink) 0%, var(--really-light-pink) 50%, var(--light-pink) 100%);
+    background-size: 200% 100%;
+}
+
+
+.loading-button{
+    animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+    0%{
+        background-position: -100% 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
+}

@@ -5,6 +5,7 @@ import './Assets/css/colors.css';
 import './Assets/css/sizes.css';
 import './Assets/css/links.css'
 import './Assets/css/general.css';
+import './Assets/css/animations.css';
 import Routes from './Routes';
 import { useSelector } from 'react-redux'
 

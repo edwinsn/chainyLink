@@ -6,7 +6,7 @@ import useFireBaseLogin from './logic/loginLogic'
 const callBack = (userCredential) => {
     // Signed in
     localStorage.setItem('user', JSON.stringify(userCredential.user));
-    window.location = '/yourLinks'
+    window.location = '/'
 }
 
 const Login = () => {
@@ -25,13 +25,13 @@ const Login = () => {
 
     const Login = (email, password) => {
 
-        handleLoginWithEmail(email, password, callBack)
+        return handleLoginWithEmail(email, password, callBack)
 
     }
 
     const LoginWithGoogle = () => {
 
-        handleLoginWithGoogle(callBack)
+        return handleLoginWithGoogle(callBack)
     }
 
     return (

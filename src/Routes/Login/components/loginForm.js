@@ -12,6 +12,7 @@ export default function LoginForm({
     resetPassword
 }) {
 
+    const [loading, setLoading] = useState(false)
     const [wasPasswordReseted, setWasPasswordReseted] = useState(false)
 
     const handlePasswordReset = (ev) => {
@@ -24,8 +25,12 @@ export default function LoginForm({
     const onSubmit = (ev) => {
 
         ev.preventDefault()
+        setLoading(true)
         const { email, password } = ev.target.elements
         handleLogin(email.value, password.value)
+            .finally (() => {
+                setLoading(false)
+            })
 
     }
 
@@ -44,8 +49,11 @@ export default function LoginForm({
                 onSubmit={onSubmit}
             >
 
-                <p className="">{errors.emailError}</p>
-                <p className="">{errors.passwordError}</p>
+                <p className="">
+                    {errors.emailError}</p>
+                <p className="">
+                    {errors.passwordError}
+                </p>
 
                 <input
                     placeholder='name or email'
@@ -63,13 +71,13 @@ export default function LoginForm({
                 />
                 <button
                     type='submit'
-                    className='bg-pink'
+                    className={`bg-pink ${loading && 'loading-button'}`}
                 >
                     login
                 </button>
                 <button
                     onClick={handleLoginWithGoogle}
-                    className='bg-white blue mb-1 '
+                    className={`bg-white blue mb-1 ${loading && 'loading-button'}`}
                 >
                     <FontAwesomeIcon icon={faGoogle} className="iconGoogle" />
                     Use Google

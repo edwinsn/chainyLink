@@ -10,21 +10,28 @@ export default function SignUpForm({
     errors,
 }) {
 
+    const [loading, setLoading] = React.useState(false)
 
     const onSubmit = (ev) => {
 
         ev.preventDefault()
         const { email, password } = ev.target.elements
+
+        setLoading(true)
+
         handleSignUp(email.value, password.value)
+            .finally(() => {
+                setLoading(false)
+            })
 
     }
 
-    const showUserExistsMessage = false//invalidPassword && !wasPasswordReseted
+    console.log({ errors })
 
     return (
         <section className='flex-column aling-center justify-center'>
             <header className='flex-column centered'>
-                <img src={userIcon} alt='user icon'  />
+                <img src={userIcon} alt='user icon' />
                 <h1 className='text-center'>
                     Sign up to save your links
                 </h1>
@@ -33,10 +40,12 @@ export default function SignUpForm({
                 className='flex-column centered'
                 onSubmit={onSubmit}
             >
-
-                <p className="">{errors.emailError}</p>
-                <p className="">{errors.passwordError}</p>
-
+                <p key='email-erorr'>
+                    {errors?.emailError}
+                </p>
+                <p className="">
+                    {errors?.passwordError}
+                </p>
                 <input
                     placeholder='name or email'
                     className='text-center '
@@ -52,8 +61,9 @@ export default function SignUpForm({
                     type='password'
                 />
                 <button
+                    disabled={loading}
                     type='submit'
-                    className='bg-pink'
+                    className={`bg-pink ${loading && 'loading-button'}`}
                 >
                     Sign up
                 </button>
@@ -71,12 +81,6 @@ export default function SignUpForm({
                     Sign in
                 </a>
             </p>
-            {
-                showUserExistsMessage &&
-                <span>
-                    User exists
-                </span>
-            }
-        </section>
+        </section >
     )
 }

@@ -1,9 +1,14 @@
 :root {
     --blue: #1B13C0;
+    --light-blue: #2921c2;
+    --really-light-blue: #554edb;
+    --pink: #F72585;
+    --light-pink: #f84093;
+    --really-light-pink: #fa72af;
 }
 
 .pink {
-    color: #F72585;
+    color: var(--pink);
 }
 
 .gray {
@@ -31,7 +36,7 @@
 }
 
 .bg-blue {
-    background-color: #1B13C0;
+    background-color: var(--blue);
 }
 
 .bg-white {

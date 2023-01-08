@@ -18,13 +18,13 @@ const Register = () => {
 
     const signUp = (email, password) => {
 
-        handleSignUpWithEmail(email, password, callBack)
+        return handleSignUpWithEmail(email, password, callBack)
 
     }
 
     const signUpWithGoogle = () => {
 
-        handleSignUpWithGoogle(callBack)
+        return handleSignUpWithGoogle(callBack)
 
     }
 
