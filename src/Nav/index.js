@@ -28,17 +28,17 @@ export default function Nav() {
                 alt=''
             />
         </Link>,
-        
+
         <TransformOnSidebarOnPhone key='nav-part-1'>
 
             <Link
-            to="/"
-            id="name-app"
+                to="/"
+                id="name-app"
             >
                 <span className="pink" >Chainy</span>
                 <span className='blue'>Link</span>
             </Link>
-            
+
             <Link
                 className='mx-1 my-2 a'
                 to="/about"
@@ -96,15 +96,13 @@ export default function Nav() {
                         </div>
                     }
                     <ul>
-                        <li className="mx-1" id="login" >
-                            {!userIsLogged &&
-                                <Link
-                                    to="/login"
-                                >
-                                    Login
-                                </Link>
-                            }
-                        </li>
+                        <Link
+                            to="/login"
+                        >
+                            <li className="mx-1" id="login" >
+                                Login
+                            </li>
+                        </Link>
                         <li className='mx-1'>
                             {
                                 !userIsLogged && (
@@ -119,7 +117,7 @@ export default function Nav() {
                             }
                         </li>
                     </ul>
-                </li>
+                </li >
                 {
                     userIsLogged && (
                         <Link to='/'
@@ -128,9 +126,9 @@ export default function Nav() {
                         </Link>
                     )
                 }
-            </div>
+            </div >
 
-        </nav>
+        </nav >
     )
 
 }
