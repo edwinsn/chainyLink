@@ -12,6 +12,7 @@ import useIsPhoneView from '../hooks/useIsPhoneView';
 
 export default function Nav() {
 
+    const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false)
     const userIsLogged = localStorage.getItem('user')
     const isPhoneView = useIsPhoneView()
     const stopPropagation = (ev) => ev.preventDefault();
@@ -29,11 +30,16 @@ export default function Nav() {
             />
         </Link>,
 
-        <TransformOnSidebarOnPhone key='nav-part-1'>
+        <TransformOnSidebarOnPhone
+            sideBarIsOpen={sideBarIsOpen}
+            setSideBarIsOpen={setSideBarIsOpen}
+            key='nav-part-1'
+        >
 
             <Link
                 to="/"
                 id="name-app"
+                onClick={() =>setSideBarIsOpen(false)}
             >
                 <span className="pink" >Chainy</span>
                 <span className='blue'>Link</span>
@@ -42,6 +48,7 @@ export default function Nav() {
             <Link
                 className='mx-1 my-2 a'
                 to="/about"
+                onClick={() =>setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCircleInfo} className="icon_barra mr-1" />
@@ -51,7 +58,7 @@ export default function Nav() {
             <Link
                 className='mx-1 my-2'
                 to='my-links'
-
+                onClick={() =>setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
@@ -61,6 +68,7 @@ export default function Nav() {
             <Link
                 to="/"
                 className='my-2'
+                onClick={() =>setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />

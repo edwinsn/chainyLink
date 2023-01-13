@@ -2,9 +2,7 @@ import React from 'react'
 import SideBar from './SideBar';
 import useIsPhoneView from '../hooks/useIsPhoneView';
 
-export default function TransformOnSidebarOnPhone({ children }) {
-
-    const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false)
+export default function TransformOnSidebarOnPhone({ children, setSideBarIsOpen, sideBarIsOpen }) {
 
     const isPhoneView = useIsPhoneView()
 
