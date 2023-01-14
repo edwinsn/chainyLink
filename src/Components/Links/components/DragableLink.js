@@ -18,7 +18,7 @@ const grid = 16;
 
 
 
-export default function LinkInput({ isLast, id, index, parentLink }) {
+export default function LinkInput({ isLast, id, index, parentLink, defaultValue }) {
 
     const backgroundColor = useSelector(state => state[id]?.backgroundColor)
 
@@ -48,6 +48,7 @@ export default function LinkInput({ isLast, id, index, parentLink }) {
                         parentLink={parentLink}
                         isLast={isLast}
                         id={id}
+                        defaultValue={defaultValue}
                         backgroundColor={backgroundColor}
                     />
                 </div>

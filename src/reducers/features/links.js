@@ -16,6 +16,9 @@ export const cardsSlice = createSlice({
         removeLink: (state) => {
             state.numberOfLinks = state.numberOfLinks > 0 ? state.numberOfLinks - 1 : 0
         },
+        setLinksNumber: (state, action) => {
+            state.numberOfLinks = action.payload
+        },
         setBackgroundColor: (state, action) => {
             state.backgroundColor = action.payload || defaultBackground
         },
@@ -26,7 +29,7 @@ export const cardsSlice = createSlice({
         setLinkWhoseColorIsBeingModified: (state, action) => {
 
             const { position, parentLink, id } = action.payload
-            
+
             state.colorModal.position = position
             state.colorModal.parentLink = parentLink
             state.colorModal.id = id
@@ -40,7 +43,8 @@ export const {
     removeLink,
     setBackgroundColor,
     setLinkColor,
-    setLinkWhoseColorIsBeingModified
+    setLinkWhoseColorIsBeingModified,
+    setLinksNumber,
 } = cardsSlice.actions
 
 export default cardsSlice.reducer

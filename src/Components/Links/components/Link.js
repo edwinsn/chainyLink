@@ -12,6 +12,7 @@ export default function Link({
     isLast,
     id,
     backgroundColor,
+    defaultValue,
 }) {
 
     const handleChanged = debounce((ev) => {
@@ -47,6 +48,7 @@ export default function Link({
                 onFocus={isLast ? onFocused : null}
                 onBlur={isLast ? onBlurred : null}
                 style={inputStyle}
+                defaultValue={defaultValue}
             />
             <LinkColorPicker
                 id={id}

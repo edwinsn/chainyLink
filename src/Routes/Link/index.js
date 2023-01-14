@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import LinksList from './components/LinksList'
 import LinkImage from './components/LinkImage'
-import useLink from './hooks/useLink'
+import useLink from '../../Components/Links/hooks/useLink'
 import './Assets/links.css'
 import { useDispatch } from 'react-redux'
 import { setBackgroundColor } from '../../reducers/features/links'

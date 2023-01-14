@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux'
 import LinkInput from './DragableLink'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import updateLinkGroupOrder from '../services/updateLinkGroupOrder'
-
+import { useDispatch } from 'react-redux';
+import { setLinksNumber } from '../../../reducers/features/links'
 
 const reorder = (list, startIndex, endIndex) => {
 
@@ -21,14 +22,15 @@ const getListStyle = isDraggingOver => ({
     background: isDraggingOver ? "lightblue" : "transparent",
     padding: grid,
     width: '80%',
-    maxWidth:'22cm',
-    margin:'0 auto',
+    maxWidth: '22cm',
+    margin: '0 auto',
 });
 
 
-export default function LinksList({ parentLink }) {
+export default function LinksList({ parentLink, childLinks }) {
 
     const numberOfLinks = useSelector(state => state).numberOfLinks || 0
+    const dispatch = useDispatch()
 
     useEffect(() => {
 
@@ -38,6 +40,16 @@ export default function LinksList({ parentLink }) {
         setLinks(newLinksArray)
 
     }, [numberOfLinks])
+
+    useEffect(() => {
+
+        const newLinksArrayLength = childLinks?.length
+
+        if (newLinksArrayLength) {
+            dispatch(setLinksNumber(newLinksArrayLength))
+        }
+
+    }, [childLinks?.length, dispatch])
 
     const [links, setLinks] = useState(() => new Array(numberOfLinks).fill(0).map((_, index) => ({
         id: index,
@@ -90,6 +102,7 @@ export default function LinksList({ parentLink }) {
                                     id={id}
                                     index={index}
                                     parentLink={parentLink}
+                                    defaultValue={childLinks?.[index]?.url}
                                 />
                             ))
                         }

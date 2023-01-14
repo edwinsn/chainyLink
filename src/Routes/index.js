@@ -1,6 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Nav from '../Nav'
 import { lazy, Suspense } from 'react'
+import EditLink from "./EditLink";
 
 const About = lazy(() => import('./Home'));
 const Login = lazy(() => import('./Login'));
@@ -21,8 +22,9 @@ export default function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/login" element={<Login />} />
                         <Route path='/sign-up' element={<Register />} />
-                        <Route path="/link/:id" element={<Link />} />
                         <Route path="/my-links" element={<UserLinks />} />
+                        <Route path="/link/:id" element={<Link />} />
+                        <Route path="/link/:id/edit" element={<EditLink />} />
                     </Routes>
                 </Suspense>
             </BrowserRouter>

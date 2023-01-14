@@ -1,5 +1,6 @@
 import React from 'react'
 import CopiableText from '../../../Components/CopiableText'
+import EditLink from './EditLink';
 
 export default function LinksList({ links }) {
     return (
@@ -12,6 +13,7 @@ export default function LinksList({ links }) {
                     {link.parentLink}
                 </a>
                 <CopiableText text={link.parentLink} />
+                <EditLink link={link.parentLink} />
             </div>
         ))
 
