@@ -8,7 +8,7 @@ export default function useIsPhoneView() {
     const [isPhoneView, setIsPhoneView] = React.useState(false)
 
     React.useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 700px)')
+        const mediaQuery = window.matchMedia('(max-width: 800px)')
         const handleResize = () => {
             if (mediaQuery.matches) {
                 setIsPhoneView(true)

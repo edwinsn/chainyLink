@@ -11,9 +11,11 @@ export default function SideBar({ open, setOpen, children }) {
         },
         content: {
             position: open ? 'absolute' : undefined,
+            overflow: "visible"
         },
         sidebar: {
-            background: "white"
+            background: "white",
+            overflow: "visible"
         },
     }
 
@@ -24,6 +26,7 @@ export default function SideBar({ open, setOpen, children }) {
                 onClick={() => setOpen(!open)}
             >
                 <FontAwesomeIcon
+                    id="icon_bars"
                     icon={faBars}
                     onClick={() => setOpen(!open)}
                 />

@@ -36,19 +36,21 @@ export default function Nav() {
             key='nav-part-1'
         >
 
-            <Link
+            <p
                 to="/"
                 id="name-app"
                 onClick={() =>setSideBarIsOpen(false)}
+                className="b"
             >
                 <span className="pink" >Chainy</span>
                 <span className='blue'>Link</span>
-            </Link>
+            </p>
 
             <Link
-                className='mx-1 my-2 a'
+                className='mx-1 my-2 a c'
                 to="/about"
                 onClick={() =>setSideBarIsOpen(false)}
+                
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCircleInfo} className="icon_barra mr-1" />

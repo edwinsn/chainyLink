@@ -23,6 +23,11 @@ nav ul>a {
     height: 2.5rem;
 }
 
+#icon_bars {
+    height: 2rem;
+    padding: 8px;
+}
+
 p {
     display: inline-block;
 }
@@ -111,15 +116,19 @@ p {
     max-height: 100px;
 }
 
-@media (max-width: 700px) { 
+@media (max-width: 800px) {
 
-    /*Barra Lateral*/  
+    /*Barra Lateral*/
 
     /*part-1 {
         display: flex;
         flex-direction: column;
         gap: 8vh;
     }*/
+
+    #part-1 {
+        overflow: visible;
+    }
 
     #part-1 a {
         border: 1px solid white;
@@ -151,4 +160,34 @@ p {
         display: inline-block;
     }
 
+    .b::after {
+        background-color: white;
+        color: white;
+        content: ".";
+        height: 26px;
+        left: 175px;
+        position: absolute;
+        top: 0px;
+        width: 30px;
+        z-index: -8;
+    }
+
+    .c::after {
+        background-color: #a5a9af;
+        border-radius: 100% 0 0 0%;
+        color: #a5a9af;
+        content: ".";
+        height: 36px;
+        left: 174.5px;
+        position: absolute;
+        top: -8px;
+        width: 80px;
+        z-index: -5;
+    }
+
+    /*.b::before {
+        
+        font: var(--fa-font-solid);
+        content: "\f007";
+      }*/
 }
