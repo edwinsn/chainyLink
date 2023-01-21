@@ -4,6 +4,7 @@
     --large-text: 22px;
     --really-large-text: 32px;
     --normal-rounded: 10px;
+    --hight-rounded: 30px;
     --fast-transition: 300ms;
     --slow-transition: 500ms;
 }
@@ -22,4 +23,12 @@
 
 .d-none {
     display: none;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.relative{
+    position: relative;
 }

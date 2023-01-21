@@ -1,0 +1,14 @@
+#hero-animation link {
+    padding: 10px;
+
+}
+
+#hero-animation>div:nth-child(1) {
+    background-color: red;
+}
+
+#hero-animation>div:nth-child(1) .link{
+    padding: 10px;
+    background-color: white;
+    margin-top: 1rem;
+}
