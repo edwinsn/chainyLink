@@ -7,10 +7,10 @@ import './third-card.css'
 export default function index() {
     return (
         <div id='hero-animation'>
-            <div className='card flex-column centered '>
+            <div id='aboutFirstCard' className='card flex-column centered '>
                 <div></div>
-                <div className='link' >Link 1</div>
-                <div className='link'>Link 2</div>
+                <div className='link text-center' >Link 1</div>
+                <div className='link text-center'>Link 2</div>
             </div>
             <div
                 className='w-100'
