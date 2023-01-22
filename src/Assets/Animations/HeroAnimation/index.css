@@ -1,0 +1,84 @@
+/**
+* In this animation I'll use diferent variables
+* from the ones used in the chainy 
+* interface, by example here I'll use another
+* radius to give a more animated appearance
+**/
+
+#hero-animation {
+    border: 1px solid purple;
+    width: 100%;
+    height: 80vh;
+    --animation-time: 6000ms;
+    --animation-delay: 2000ms;
+    --animation-second-step-delay: 3000ms;
+    --primary-color: #000dbf;
+    --secondary-color: #2bff00;
+}
+
+#hero-animation .card {
+    width: 48%;
+    aspect-ratio: 0.79;
+    border-radius: 108px;
+}
+
+#hero-animation__second-cards {
+    position: relative;
+    right: 20%;
+    top: -10%;
+    z-index: 1;
+    display: flex;
+    border: 5px solid yellow;
+}
+
+#hero-animation__second-cards .card {
+    position: absolute;
+}
+
+#hero-animation__second-cards .card:nth-child(1) {
+    animation: shuffle var(--animation-time) infinite;
+    animation-delay: calc(var(--animation-delay) + var(--animation-second-step-delay));
+    z-index: 2;
+    background-color: var(--secondary-color);
+}
+
+#hero-animation__second-cards .card:nth-child(2) {
+    animation: shuffle var(--animation-time) infinite, moveBellow var(--animation-time) infinite;
+    animation-delay: var(--animation-delay);
+    z-index: 3;
+    background-color: var(--primary-color);
+}
+
+@keyframes shuffle {
+
+    0% {
+        transform: translateX(0%);
+    }
+
+    15% {
+        transform: translateX(-100%);
+    }
+
+    30% {
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes moveBellow {
+    0% {
+        z-index: 3;
+    }
+
+    30% {
+        z-index: 1;
+    }
+
+    60% {
+        z-index: 1;
+    }
+
+    90% {
+        z-index: 3;
+    }
+}

@@ -1,7 +1,7 @@
 import '../../Assets/css/App.css';
-import hero_image from '../../Assets/Images/Frame-1.svg';
 import icon_decoration from '../../Assets/Images/icon_decoration.svg';
 import './index.css';
+import HeroAmination from '../../Assets/Animations/HeroAnimation';
 
 function Home() {
 
@@ -32,13 +32,11 @@ function Home() {
                     className='flex centered'
                     id='hero_image'
                 >
-                    <img
-                        src={hero_image}
-                        alt='Links betten all your platforms' />
+                    <HeroAmination />
                 </div>
             </section>
 
-        </div >
+        </div>
     );
 }
 
