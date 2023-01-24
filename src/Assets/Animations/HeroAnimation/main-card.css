@@ -1,5 +1,8 @@
 #aboutFirstCard {
-    background-color: red;
+    background-color: var(--primary-color);
+    border-color: var(--primary-light-color) !important;
+    z-index: 2;
+    position: relative;
 }
 
 #aboutFirstCard .link {
@@ -24,7 +27,7 @@
 }
 
 #aboutFirstCard .link:nth-child(2) {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     animation: focusButton1 var(--animation-time) infinite;
     animation-delay: var(--animation-delay);
 }
@@ -37,7 +40,7 @@
 @keyframes focusButton1 {
 
     0% {
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
     }
 
     1% {
@@ -49,7 +52,7 @@
     }
 
     51% {
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
     }
 
 }
@@ -61,11 +64,11 @@
     }
 
     1% {
-        background-color: var(--secondary-color);
+        background-color: var(--third-color);
     }
 
     50% {
-        background-color: var(--secondary-color);
+        background-color: var(--third-color);
     }
 
     51% {

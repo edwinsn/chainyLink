@@ -7,19 +7,26 @@
 
 #hero-animation {
     border: 1px solid purple;
-    width: 100%;
+    text-align: center;
+    width: 48%;
     height: 80vh;
     --animation-time: 6000ms;
     --animation-delay: 2000ms;
     --animation-second-step-delay: 3000ms;
-    --primary-color: #000dbf;
-    --secondary-color: #2bff00;
+    --primary-color: #F72585;
+    --primary-light-color: #f73d9e;
+    --secondary-color: #1B13C0;
+    --secondary-light-color: #3028cc;
+    --third-color: #0CD4F7;
+    --third-light-color: #b5e0fc;
 }
 
 #hero-animation .card {
-    width: 48%;
+    width: 100%;
     aspect-ratio: 0.79;
     border-radius: 108px;
+    border: 5px solid;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 #hero-animation__second-cards {
@@ -28,7 +35,6 @@
     top: -10%;
     z-index: 1;
     display: flex;
-    border: 5px solid yellow;
 }
 
 #hero-animation__second-cards .card {
@@ -38,15 +44,17 @@
 #hero-animation__second-cards .card:nth-child(1) {
     animation: shuffle var(--animation-time) infinite;
     animation-delay: calc(var(--animation-delay) + var(--animation-second-step-delay));
+    background-color: var(--third-color);
+    border-color: var(--third-light-color);
     z-index: 2;
-    background-color: var(--secondary-color);
 }
 
 #hero-animation__second-cards .card:nth-child(2) {
     animation: shuffle var(--animation-time) infinite, moveBellow var(--animation-time) infinite;
     animation-delay: var(--animation-delay);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-light-color);
     z-index: 3;
-    background-color: var(--primary-color);
 }
 
 @keyframes shuffle {
