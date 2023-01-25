@@ -42,10 +42,6 @@
         min-width: 500px;
     }
 
-    #hero_image img {
-        min-width: 400px;
-    }
-
 }
 
 @media (max-width: 600px) {

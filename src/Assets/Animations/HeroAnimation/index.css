@@ -19,6 +19,7 @@
     --secondary-light-color: #3028cc;
     --third-color: #0CD4F7;
     --third-light-color: #b5e0fc;
+    --border-radius-small: 10px;
 }
 
 #hero-animation .card {

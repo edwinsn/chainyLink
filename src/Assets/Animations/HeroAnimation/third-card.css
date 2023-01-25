@@ -1,0 +1,39 @@
+#hero-animation__second-cards>div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#hero-animation__second-cards>div:nth-child(1)>div:nth-child(1) {
+    height: 65%;
+    width: 80%;
+    background-color: aliceblue;
+    border-radius: var(--border-radius-small);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10%;
+    align-items: flex-start;
+}
+
+#hero-animation__second-cards>div:nth-child(1)>div:nth-child(1)>div:nth-child(1) {
+    background-color: var(--third-color);
+    border-radius: 50%;
+    width: 25%;
+    aspect-ratio: 1;
+}
+
+
+#hero-animation__second-cards>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#hero-animation__second-cards>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) img {
+    height: 1.3em;
+    width: 1.3em;
+    object-fit: contain;
+}
