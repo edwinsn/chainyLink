@@ -50,9 +50,8 @@ export default function LoginForm({
             >
 
                 <p className="">
-                    {errors.emailError}</p>
-                <p className="">
-                    {errors.passwordError}
+                    <span>{errors.emailError}</span>
+                   {errors.passwordError}
                 </p>
 
                 <input

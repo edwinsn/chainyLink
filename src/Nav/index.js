@@ -9,6 +9,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons'
 import './Assets/nav.css';
 import TransformOnSidebarOnPhone from './TransformOnSidebarOnPhone';
 import useIsPhoneView from '../hooks/useIsPhoneView';
+import { faFontAwesome } from '@fortawesome/free-solid-svg-icons';
 
 export default function Nav() {
 
@@ -18,7 +19,7 @@ export default function Nav() {
     const stopPropagation = (ev) => ev.preventDefault();
 
     let sideBarAndIcon = [
-        <Link
+        <p
             to="/"
             className='mx-1'
             key='chainy-icon'
@@ -28,7 +29,7 @@ export default function Nav() {
                 src={icon_home}
                 alt=''
             />
-        </Link>,
+        </p>,
 
         <TransformOnSidebarOnPhone
             sideBarIsOpen={sideBarIsOpen}
@@ -36,21 +37,25 @@ export default function Nav() {
             key='nav-part-1'
         >
 
+            <input id="checkbox" type="checkbox" checked={sideBarIsOpen} />
+            <label for="checkbox" ></label>
+
             <p
                 to="/"
                 id="name-app"
-                onClick={() =>setSideBarIsOpen(false)}
-                className="b"
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className="pink" >Chainy</span>
                 <span className='blue'>Link</span>
             </p>
 
+
+
             <Link
-                className='mx-1 my-2 a c'
+                className='mx-1 my-2'
                 to="/about"
-                onClick={() =>setSideBarIsOpen(false)}
-                
+                onClick={() => setSideBarIsOpen(false)}
+
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCircleInfo} className="icon_barra mr-1" />
@@ -60,7 +65,7 @@ export default function Nav() {
             <Link
                 className='mx-1 my-2'
                 to='my-links'
-                onClick={() =>setSideBarIsOpen(false)}
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
@@ -68,9 +73,9 @@ export default function Nav() {
                 </span>
             </Link>
             <Link
-                to="/"
                 className='my-2'
-                onClick={() =>setSideBarIsOpen(false)}
+                to="/"
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
@@ -85,12 +90,12 @@ export default function Nav() {
 
     return (
         <nav>
-            <div className='flex part-1' >
+            <div className='flex' id="part-1" >
 
                 {sideBarAndIcon}
 
             </div>
-            <div className='flex centered part-2'>
+            <div className='flex centered part-2' id="part-2">
 
                 <SearchLink className='mx-1' />
 
