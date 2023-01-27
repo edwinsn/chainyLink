@@ -28,7 +28,7 @@ export default function LoginForm({
         setLoading(true)
         const { email, password } = ev.target.elements
         handleLogin(email.value, password.value)
-            .finally (() => {
+            .finally(() => {
                 setLoading(false)
             })
 
@@ -51,7 +51,7 @@ export default function LoginForm({
 
                 <p className="">
                     <span>{errors.emailError}</span>
-                   {errors.passwordError}
+                    {errors.passwordError}
                 </p>
 
                 <input
@@ -83,9 +83,9 @@ export default function LoginForm({
                 </button>
             </form>
             <p className='text-center'>
-                Sin cuenta?
-                <a href='/register' className='ml-1'>
-                    Registrate
+                No account?
+                <a href='/sign-up' className='ml-1'>
+                    Sign up
                 </a>
             </p>
             {
