@@ -9,7 +9,6 @@ import { faUser } from '@fortawesome/free-regular-svg-icons'
 import './Assets/nav.css';
 import TransformOnSidebarOnPhone from './TransformOnSidebarOnPhone';
 import useIsPhoneView from '../hooks/useIsPhoneView';
-import { faFontAwesome } from '@fortawesome/free-solid-svg-icons';
 
 export default function Nav() {
 
