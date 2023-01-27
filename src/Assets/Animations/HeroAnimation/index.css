@@ -30,7 +30,7 @@
     /*border: 1px solid black;*/
     text-align: center;
     height: var(--height);
-    aspect-ratio: calc((var(--card-aspect-ratio)/2));
+    width: calc(var(--height)*(var(--card-aspect-ratio)/2));
     max-width: 13cm;
     display: flex;
     flex-direction: column;
