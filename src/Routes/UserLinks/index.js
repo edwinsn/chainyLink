@@ -34,7 +34,10 @@ const UserLinks = () => {
 
 
     return (
-        <section className='flex-column justify-center'>
+        <section className='flex-column'>
+            <h1 className='text-center mb-3'>
+                Your links
+            </h1>
             <LinksList
                 links={userLinks}
             />
