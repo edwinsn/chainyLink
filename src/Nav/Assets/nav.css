@@ -68,7 +68,6 @@ p {
 #user-login-icon {
     display: block;
     font-size: 20px;
-    padding: 10px 5px;
 }
 
 .part-2 li ul {
@@ -111,9 +110,14 @@ p {
     max-height: 100px;
 }
 
-@media (max-width: 700px) { 
+.nav-icon-padding {
+    padding: 10px 0 10px 5px;
 
-    /*Barra Lateral*/  
+}
+
+@media (max-width: 700px) {
+
+    /*Barra Lateral*/
 
     /*part-1 {
         display: flex;

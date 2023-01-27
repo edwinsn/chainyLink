@@ -18,17 +18,6 @@ export default function Nav() {
     const stopPropagation = (ev) => ev.preventDefault();
 
     let sideBarAndIcon = [
-        <Link
-            to="/"
-            className='mx-1'
-            key='chainy-icon'
-        >
-            <img
-                id="icon_home"
-                src={icon_home}
-                alt=''
-            />
-        </Link>,
 
         <TransformOnSidebarOnPhone
             sideBarIsOpen={sideBarIsOpen}
@@ -39,7 +28,7 @@ export default function Nav() {
             <Link
                 to="/"
                 id="name-app"
-                onClick={() =>setSideBarIsOpen(false)}
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className="pink" >Chainy</span>
                 <span className='blue'>Link</span>
@@ -48,7 +37,7 @@ export default function Nav() {
             <Link
                 className='mx-1 my-2 a'
                 to="/about"
-                onClick={() =>setSideBarIsOpen(false)}
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCircleInfo} className="icon_barra mr-1" />
@@ -58,7 +47,7 @@ export default function Nav() {
             <Link
                 className='mx-1 my-2'
                 to='my-links'
-                onClick={() =>setSideBarIsOpen(false)}
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
@@ -68,7 +57,7 @@ export default function Nav() {
             <Link
                 to="/"
                 className='my-2'
-                onClick={() =>setSideBarIsOpen(false)}
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
@@ -79,7 +68,20 @@ export default function Nav() {
         </TransformOnSidebarOnPhone>
     ]
 
-    if (isPhoneView) sideBarAndIcon = sideBarAndIcon.reverse()
+
+    if (!isPhoneView) sideBarAndIcon.unshift(
+        <Link
+            to="/"
+            className='mx-1'
+            key='chainy-icon'
+        >
+            <img
+                id="icon_home"
+                src={icon_home}
+                alt=''
+            />
+        </Link>
+    )
 
     return (
         <nav>
@@ -98,7 +100,7 @@ export default function Nav() {
                         <div
                             id='user-login-icon'
                             onClick={stopPropagation}
-                            className='ml-1 pointer'
+                            className='ml-1 pointer nav-icon-padding'
                         >
                             <FontAwesomeIcon icon={faUser} className="pink" />
                         </div>
@@ -125,7 +127,7 @@ export default function Nav() {
                             }
                         </li>
                     </ul>
-                </li >
+                </li>
                 {
                     userIsLogged && (
                         <Link to='/'
@@ -134,9 +136,9 @@ export default function Nav() {
                         </Link>
                     )
                 }
-            </div >
+            </div>
 
-        </nav >
+        </nav>
     )
 
 }
