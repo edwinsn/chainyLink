@@ -33,7 +33,7 @@
 }
 
 #hero-animation__second-cards>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) img {
-    height: 1.3em;
-    width: 1.3em;
+    width: var(--icons-height);
+    aspect-ratio: 1;
     object-fit: contain;
 }

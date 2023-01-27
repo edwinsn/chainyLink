@@ -1,3 +1,21 @@
+@media (min-width: 900px) {
+
+    #hero-animation {
+        --link-padding: 1.2rem;
+        --link-vertical-margin: .6rem;
+        --link-icon-margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    #hero-animation {
+        --link-padding: .5rem;
+        --link-vertical-margin: .3rem;
+        --link-icon-margin-bottom: .5rem;
+    }
+}
+
+
 #aboutFirstCard {
     background-color: var(--primary-color);
     border-color: var(--primary-light-color) !important;
@@ -5,25 +23,22 @@
     position: relative;
 }
 
-#aboutFirstCard .link {
-    padding: 10px;
-    background-color: white;
-}
 
 #aboutFirstCard div:nth-child(1) {
     background-color: white;
     aspect-ratio: 1;
     width: 35%;
     border-radius: 50%;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--link-icon-margin-bottom);
 }
 
 #aboutFirstCard .link {
     background-color: white;
     width: 65%;
-    padding: 1.2rem;
-    margin: .6rem 0;
+    padding: var(--link-padding);
+    margin: var(--link-vertical-margin) 0;
     border-radius: 12px;
+    font-size: calc(var(--font-size));
 }
 
 #aboutFirstCard .link:nth-child(2) {

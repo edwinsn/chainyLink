@@ -12,8 +12,8 @@ export default function index() {
         <div id='hero-animation'>
             <div id='aboutFirstCard' className='card flex-column centered '>
                 <div></div>
-                <div className='link text-center' >Link 1</div>
-                <div className='link text-center'>Link 2</div>
+                <div className='link text-center' >Songs</div>
+                <div className='link text-center'>My net</div>
             </div>
             <div
                 className='w-100'

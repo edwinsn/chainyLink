@@ -5,11 +5,37 @@
 * radius to give a more animated appearance
 **/
 
+@media (min-width: 900px) {
+
+    #hero-animation {
+        --border-radius-small: 10px;
+        --border-radius-big: 108px;
+        --height: 80vh;
+        --font-size: 1em;
+        --icons-height: 1.3em;
+    }
+}
+
+@media (max-width: 900px) {
+    #hero-animation {
+        --border-radius-small: 8px;
+        --border-radius-big: 50px;
+        --height: 40vh;
+        --font-size: .6em;
+        --icons-height: .8em;
+    }
+}
+
 #hero-animation {
-    border: 1px solid purple;
+    /*border: 1px solid black;*/
     text-align: center;
-    width: 48%;
-    height: 80vh;
+    height: var(--height);
+    aspect-ratio: calc((var(--card-aspect-ratio)/2));
+    max-width: 13cm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     --animation-time: 6000ms;
     --animation-delay: 2000ms;
     --animation-second-step-delay: 3000ms;
@@ -19,23 +45,35 @@
     --secondary-light-color: #3028cc;
     --third-color: #0CD4F7;
     --third-light-color: #b5e0fc;
-    --border-radius-small: 10px;
+    --card-aspect-ratio: 0.79;
+    --card-percentage-covered-top: -12%;
+    --card-percentage-covered-top-number: 0.12;
+    --card-percentage-covered-right: 40%;
+
 }
 
 #hero-animation .card {
     width: 100%;
-    aspect-ratio: 0.79;
-    border-radius: 108px;
+    min-width: 3.5cm;
+    aspect-ratio: var(--card-aspect-ratio);
+    border-radius: var(--border-radius-big);
     border: 5px solid;
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 #hero-animation__second-cards {
     position: relative;
-    right: 20%;
-    top: -10%;
+    right: var(--card-percentage-covered-right);
+    top: calc(var(--card-percentage-covered-top)/2);
     z-index: 1;
     display: flex;
+    width: 100%;
+    aspect-ratio: 0.79;
+}
+
+#hero-animation>.card:nth-child(1) {
+    position: relative;
+    top: calc(-1*var(--card-percentage-covered-top)/2);
 }
 
 #hero-animation__second-cards .card {
