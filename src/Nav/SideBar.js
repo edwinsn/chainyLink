@@ -25,16 +25,17 @@ export default function SideBar({ open, setOpen, children }) {
             <span
                 id="menu"
                 onClick={() => setOpen(!open)}
+                className='pointer'
             >
-                
+
                 <FontAwesomeIcon
                     id="icon_bars"
                     icon={faBars}
                     onClick={() => setOpen(!open)}
                 />
-                
-                
-                
+
+
+
             </span>
             <Sidebar
                 sidebar={children}
@@ -43,7 +44,7 @@ export default function SideBar({ open, setOpen, children }) {
                 styles={styles}
                 rootClassName='sidebar_root_container'
                 rootId="part-1"
-                
+
             >
                 <span>{setOpen}</span>
             </Sidebar>
