@@ -36,6 +36,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform: rotate3d(2, 1, 2, 45deg);
     --animation-time: 6000ms;
     --animation-delay: 2000ms;
     --animation-second-step-delay: 3000ms;
@@ -45,7 +46,7 @@
     --secondary-light-color: #3028cc;
     --third-color: #0CD4F7;
     --third-light-color: #b5e0fc;
-    --card-aspect-ratio: 0.79;
+    --card-aspect-ratio: 0.75;
     --card-percentage-covered-top: -12%;
     --card-percentage-covered-top-number: 0.12;
     --card-percentage-covered-right: 40%;
@@ -57,8 +58,11 @@
     min-width: 3.5cm;
     aspect-ratio: var(--card-aspect-ratio);
     border-radius: var(--border-radius-big);
-    border: 5px solid;
-    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+    border-bottom: 13px solid;
+    border-right: 4px solid;
+    border-left: 7px solid;
+    border-top: 3px solid;
+    box-shadow: 6px 7px 19px 0px rgba(0, 0, 0, 0.3);
 }
 
 #hero-animation__second-cards {
