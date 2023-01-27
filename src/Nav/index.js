@@ -62,6 +62,7 @@ export default function Nav() {
             <Link
                 onClick={() => setSideBarIsOpen(false)}
                 className='my-2'
+                to='/'
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
