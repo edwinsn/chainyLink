@@ -1,30 +1,48 @@
-#aboutFirstCard {
-    background-color: red;
+@media (min-width: 900px) {
+
+    #hero-animation {
+        --link-padding: 1.2rem;
+        --link-vertical-margin: .6rem;
+        --link-icon-margin-bottom: 1.5rem;
+    }
 }
 
-#aboutFirstCard .link {
-    padding: 10px;
-    background-color: white;
+@media (max-width: 900px) {
+    #hero-animation {
+        --link-padding: .5rem;
+        --link-vertical-margin: .3rem;
+        --link-icon-margin-bottom: .5rem;
+    }
 }
+
+
+#aboutFirstCard {
+    background-color: var(--primary-color);
+    border-color: var(--primary-light-color) !important;
+    z-index: 2;
+    position: relative;
+}
+
 
 #aboutFirstCard div:nth-child(1) {
     background-color: white;
     aspect-ratio: 1;
     width: 35%;
     border-radius: 50%;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--link-icon-margin-bottom);
 }
 
 #aboutFirstCard .link {
     background-color: white;
     width: 65%;
-    padding: 1.2rem;
-    margin: .6rem 0;
+    padding: var(--link-padding);
+    margin: var(--link-vertical-margin) 0;
     border-radius: 12px;
+    font-size: calc(var(--font-size));
 }
 
 #aboutFirstCard .link:nth-child(2) {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     animation: focusButton1 var(--animation-time) infinite;
     animation-delay: var(--animation-delay);
 }
@@ -37,7 +55,7 @@
 @keyframes focusButton1 {
 
     0% {
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
     }
 
     1% {
@@ -49,7 +67,7 @@
     }
 
     51% {
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
     }
 
 }
@@ -61,11 +79,11 @@
     }
 
     1% {
-        background-color: var(--secondary-color);
+        background-color: var(--third-color);
     }
 
     50% {
-        background-color: var(--secondary-color);
+        background-color: var(--third-color);
     }
 
     51% {

@@ -1,6 +1,8 @@
 import React from 'react'
 import { signOut } from 'firebase/auth'
 import { auth } from '../fire'
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function LogOut() {
 
@@ -13,8 +15,8 @@ export default function LogOut() {
     }
 
     return (
-        <div onClick={handleLogOut}>
-            LogOut
+        <div onClick={handleLogOut} className='ml-1 mx-0 nav-icon-padding'>
+            <FontAwesomeIcon icon={faRightFromBracket} className="icon_barra" />
         </div>
     )
 }
