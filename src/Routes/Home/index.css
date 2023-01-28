@@ -1,3 +1,7 @@
+#hero-container {
+    gap: 0 2em;
+}
+
 #hero_text h1 {
     font-size: 4.8rem;
 }
@@ -9,7 +13,7 @@
 }
 
 #hero_image {
-    flex-basis: 60%;
+    flex-basis: 55%;
     flex-shrink: 1;
     flex-grow: 2;
 }
@@ -22,7 +26,7 @@
 }
 
 #hero_text {
-    flex-basis: 40%;
+    flex-basis: 35%;
     flex-shrink: 0;
     flex-grow: 1;
 }

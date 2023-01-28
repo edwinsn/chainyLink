@@ -4,70 +4,82 @@
 * interface, by example here I'll use another
 * radius to give a more animated appearance
 **/
+* {
+    box-sizing: border-box;
+}
 
 @media (min-width: 900px) {
 
     #hero-animation {
         --border-radius-small: 10px;
-        --border-radius-big: 108px;
+        --border-radius-big: 30%;
         --height: 80vh;
         --font-size: 1em;
         --icons-height: 1.3em;
+        --card-border-bottom: 13px;
+        --card-border-right: 4px;
+        --card-border-left: 7px;
+        --card-border-top: 3px;
     }
 }
 
 @media (max-width: 900px) {
     #hero-animation {
         --border-radius-small: 8px;
-        --border-radius-big: 50px;
+        --border-radius-big: 30%;
         --height: 40vh;
         --font-size: .6em;
         --icons-height: .8em;
+        --card-border-bottom: 10px;
+        --card-border-right: 3px;
+        --card-border-left: 5px;
+        --card-border-top: 2px;
     }
 }
 
 #hero-animation {
     /*border: 1px solid black;*/
-    text-align: center;
     height: var(--height);
-    width: calc(var(--height)*(var(--card-aspect-ratio)/2));
+    min-height: calc((2*var(--min-card-width)/var(--card-aspect-ratio))/1.09);
+    width: calc(1.08*var(--height)*(var(--card-aspect-ratio)/2));
+    min-width: var(--min-card-width);
     max-width: 13cm;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     transform: rotate3d(2, 1, 2, 45deg);
     --animation-time: 6000ms;
     --animation-delay: 2000ms;
     --animation-second-step-delay: 3000ms;
     --primary-color: #F72585;
-    --primary-light-color: #f73d9e;
+    --primary-light-color: #f153a5;
     --secondary-color: #1B13C0;
-    --secondary-light-color: #3028cc;
+    --secondary-light-color: #372ed4;
     --third-color: #0CD4F7;
     --third-light-color: #b5e0fc;
     --card-aspect-ratio: 0.75;
     --card-percentage-covered-top: -12%;
     --card-percentage-covered-top-number: 0.12;
     --card-percentage-covered-right: 40%;
-
+    --min-card-width: 3.5cm;
 }
 
 #hero-animation .card {
     width: 100%;
-    min-width: 3.5cm;
+    min-width: var(--min-card-width);
     aspect-ratio: var(--card-aspect-ratio);
     border-radius: var(--border-radius-big);
-    border-bottom: 13px solid;
-    border-right: 4px solid;
-    border-left: 7px solid;
-    border-top: 3px solid;
+    border-bottom: var(--card-border-bottom) solid;
+    border-right: var(--card-border-right) solid;
+    border-left: var(--card-border-left) solid;
+    border-top: var(--card-border-top) solid;
     box-shadow: 6px 7px 19px 0px rgba(0, 0, 0, 0.3);
 }
 
 #hero-animation__second-cards {
     position: relative;
-    right: var(--card-percentage-covered-right);
+    right: calc(var(--card-percentage-covered-right)/2);
     top: calc(var(--card-percentage-covered-top)/2);
     z-index: 1;
     display: flex;
@@ -78,6 +90,7 @@
 #hero-animation>.card:nth-child(1) {
     position: relative;
     top: calc(-1*var(--card-percentage-covered-top)/2);
+    right: calc(-1* var(--card-percentage-covered-right)/2);
 }
 
 #hero-animation__second-cards .card {

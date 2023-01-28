@@ -46,7 +46,7 @@ export default function SideBar({ open, setOpen, children }) {
                 rootId="part-1"
 
             >
-                <span>{setOpen}</span>
+                <span></span>
             </Sidebar>
         </>
     )

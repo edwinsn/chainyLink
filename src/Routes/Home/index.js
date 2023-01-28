@@ -2,12 +2,15 @@ import '../../Assets/css/App.css';
 import icon_decoration from '../../Assets/Images/icon_decoration.svg';
 import './index.css';
 import HeroAmination from '../../Assets/Animations/HeroAnimation';
+import useIsPhoneView from '../../hooks/useIsPhoneView';
 
 function Home() {
 
+    const isPhoneView = useIsPhoneView()
+
     return (
         <div className="App">
-            <section className='main flex centered'>
+            <section className='main flex centered' id='hero-container'>
                 <div className='flex-column align-items-center' id='hero_text'>
                     <div id='hero-text-container'>
                         <h1 className='align-items-center'>
@@ -24,7 +27,7 @@ function Home() {
                         </h2>
                         <a
                             href='/'
-                            className='btn bg-pink text-center mt-1 mb-2 block'
+                            className={`btn bg-pink text-center mt-1 ${!isPhoneView && 'mb-3'} block`}
                         >
                             Chain links!
                         </a>
@@ -37,7 +40,6 @@ function Home() {
                     <HeroAmination />
                 </div>
             </section>
-
         </div>
     );
 }

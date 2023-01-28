@@ -25,8 +25,12 @@ export default function Nav() {
             key='nav-part-1'
         >
 
-            <input id="checkbox" type="checkbox" checked={sideBarIsOpen} />
-            <label for="checkbox" ></label>
+            <input id="checkbox"
+                type="checkbox"
+                checked={sideBarIsOpen}
+                readOnly
+            />
+            <label htmlFor="checkbox" ></label>
 
             <p
                 to="/"
