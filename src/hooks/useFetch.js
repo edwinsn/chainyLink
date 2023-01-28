@@ -1,44 +1,66 @@
-import { useEffect, useState } from 'react'
-import fetchApi from './fetchApi'
+import { useQuery } from 'react-query'
+import axios from "axios";
+import config from '../api'
+let axiosConfig = {
+    headers: {
+        Authorization: localStorage.token
+    }
+};
 
-export default function useFetch(url, dataToExtract, params = '{}') {
 
-    const [data, setData] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [noData, setNoData] = useState(false)
+export default function useFetch(url, dataToExtract, params) {
 
-    useEffect(() => {
 
-        setLoading(true)
-        setNoData(false)
+    const { isLoading, data, refetch } = useQuery(url, () => {
 
-        const [dataPromise, cancel] = fetchApi(url, JSON.parse(params))
+        const endpoint = `${config.baseUrl}/${url}`
 
-        dataPromise
-            .then((res) => {
-
-                const data = res?.data?.[dataToExtract]
-
-                setData(data)
-
-                const isThereData = Array.isArray(data) ? data.length !== 0 : (typeof data === 'object' && Object.values(data || {}).length !== 0)
-
-                setNoData(!isThereData)
-
-            })
-            .catch((error) => {
-                console.error(error)
-            })
-            .finally(() => {
-                setLoading(false)
+        return axios.get(
+            endpoint,
+            {
+                params,
+                ...axiosConfig
             })
 
-        return () => cancel()
+    })
+
+    let dataExtracted
+
+    //Get the data requested
+    if (typeof dataToExtract === 'string') {
+
+        dataExtracted = data?.data?.[dataToExtract]
+
+    }
+    else if (Array.isArray(dataToExtract)) {
+
+        dataExtracted = dataToExtract.reduce((acc, curr) => {
+
+            acc[curr] = data?.data?.[curr]
+
+            return acc
+
+        }, {})
+
+    }
 
 
+    //Check if there is data
+    let isThereData
 
-    }, [dataToExtract, url, params])
+    if (typeof dataToExtract === 'string') {
 
-    return [data, loading, noData]
+        isThereData = Array.isArray(dataExtracted) ? dataExtracted.length !== 0 : (typeof data === 'object' && Object.values(data || {}).length !== 0)
+
+    } else if (Array.isArray(dataToExtract)) {
+
+        const mainData = Object.values(dataExtracted)[0]
+        isThereData = Array.isArray(mainData) ? mainData.length !== 0 : (typeof mainData === 'object' && Object.values(mainData || {}).length !== 0)
+
+    }
+
+    const noData = !isThereData && !isLoading
+
+    return [dataExtracted, isLoading, noData, refetch]
 
 }
