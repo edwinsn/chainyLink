@@ -39,6 +39,7 @@
     margin: var(--link-vertical-margin) 0;
     border-radius: 12px;
     font-size: calc(var(--font-size));
+    border: 2px solid transparent;
 }
 
 #aboutFirstCard .link:nth-child(2) {
@@ -56,18 +57,38 @@
 
     0% {
         background-color: var(--secondary-color);
+        color: aliceblue;
+        box-shadow: none;
+        border: 2px solid transparent;
     }
 
     1% {
         background-color: white;
+        color: inherit;
     }
 
     50% {
         background-color: white;
+        color: inherit;
+        box-shadow: none;
+        border: 2px solid transparent;
     }
 
     51% {
         background-color: var(--secondary-color);
+        color: aliceblue;
+    }
+
+    60% {
+        box-shadow: 1px 1px 1px 1px var(--secondary-light-color);
+        border: 2px solid var(--secondary-light-color);
+
+    }
+
+    100% {
+        color: aliceblue;
+        box-shadow: 1px 1px 1px 1px var(--secondary-light-color);
+        border: 2px solid var(--secondary-light-color);
     }
 
 }
@@ -76,17 +97,28 @@
 
     0% {
         background-color: white;
+        color: inherit;
     }
 
     1% {
         background-color: var(--third-color);
+        color: aliceblue;
+    }
+
+    10% {
+        box-shadow: 1px 1px 1px 1px var(--third-light-color);
+        border: 2px solid var(--third-light-color);
     }
 
     50% {
+        color: aliceblue;
         background-color: var(--third-color);
+        box-shadow: 1px 1px 1px 1px var(--third-light-color);
+        border: 2px solid var(--third-light-color);
     }
 
     51% {
+        color: inherit;
         background-color: white;
     }
 
