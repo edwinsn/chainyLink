@@ -1,25 +1,20 @@
 import { useQuery } from 'react-query'
 import axios from "axios";
 import config from '../api'
-let axiosConfig = {
-    headers: {
-        Authorization: localStorage.token
-    }
-};
 
 
-export default function useFetch(url, dataToExtract, params) {
+
+export default function useFetch(url, dataToExtract, params = {}) {
 
 
     const { isLoading, data, refetch } = useQuery(url, () => {
 
-        const endpoint = `${config.baseUrl}/${url}`
+        const endpoint = `${config.REACT_APP_API_URL}${url}`
 
         return axios.get(
             endpoint,
             {
-                params,
-                ...axiosConfig
+                params
             })
 
     })
