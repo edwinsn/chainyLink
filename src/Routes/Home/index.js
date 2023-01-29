@@ -14,10 +14,17 @@ function Home() {
                 <div className='flex-column align-items-center' id='hero_text'>
                     <div id='hero-text-container'>
                         <h1 className='align-items-center'>
-                            <span>
-                                <img src={icon_decoration} alt='' />
-                                Share your
-                            </span> <br /> <span className='blue'>
+                            <span className='inline-flex align-items-center'>
+                                <img
+                                    src={icon_decoration}
+                                    alt=''
+                                    className='text-icon'
+                                />
+                                <span className='pink'>
+                                    Share
+                                </span> your
+                            </span>
+                            <br /> <span className='blue'>
                                 Links
                             </span> at once
                         </h1>
