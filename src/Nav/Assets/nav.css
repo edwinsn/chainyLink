@@ -6,7 +6,6 @@
 
 nav {
     align-items: center;
-    border: 1px solid none;
     display: flex;
     justify-content: space-between;
     height: 8vh;
@@ -46,6 +45,7 @@ p {
 
 #part-1 #name-app {
     background-color: none;
+    border: none;
     display: none;
     font-size: 19px;
     padding: 20px 0 0 35px;
@@ -85,7 +85,7 @@ p {
     transition: max-height var(--fast-transition) linear;
     transition: padding var(--fast-transition) linear;
     text-align: center;
-    top: 10vh;
+    top: 9vh;
     width: 200px;
     z-index: 5;
 }
@@ -122,12 +122,6 @@ p {
 @media (max-width: 800px) { 
 
     /*Barra Lateral*/
-
-    /*part-1 {
-        display: flex;
-        flex-direction: column;
-        gap: 8vh;
-    }*/
 
     #part-1 a {
         border: 1px solid white;

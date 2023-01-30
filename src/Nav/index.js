@@ -32,16 +32,14 @@ export default function Nav() {
             />
             <label htmlFor="checkbox" ></label>
 
-            <p
+            <Link
                 to="/"
                 id="name-app"
                 onClick={() => setSideBarIsOpen(false)}
             >
                 <span className="pink" >Chainy</span>
                 <span className='blue'>Link</span>
-            </p>
-
-
+            </Link>
 
             <Link
                 className='mx-1 my-2'
@@ -99,7 +97,7 @@ export default function Nav() {
                 {sideBarAndIcon}
 
             </div>
-            <div className='flex centered part-2' id="part-2">
+            <div className='flex centered' id="part-2">
 
                 <SearchLink className='mx-1' />
 

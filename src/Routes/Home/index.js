@@ -30,7 +30,7 @@ function Home() {
                         </h1>
                         <h2 className='my-3'>
                             Send you favory playlist from diferent sites,
-                            your social networks or just a shhopping car from diferent stores!
+                            your social networks or just a shopping car from diferent stores!
                         </h2>
                         <a
                             href='/'
