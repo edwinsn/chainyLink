@@ -40,10 +40,8 @@ export default function SignUpForm({
                 className='flex-column centered'
                 onSubmit={onSubmit}
             >
-                <p key='email-erorr'>
-                    {errors?.emailError}
-                </p>
-                <p className="">
+                <p>
+                    <span>{errors?.emailError}</span>
                     {errors?.passwordError}
                 </p>
                 <input
