@@ -123,6 +123,10 @@ p {
 
     /*Barra Lateral*/
 
+    #routh_active {
+        background-color: rgb(255, 233, 200);
+    }
+
     #part-1 a {
         border: 1px solid white;
         font-size: 15.5px;
@@ -149,6 +153,8 @@ p {
         display: inline-block;
         margin-bottom: 15vh;
     }
+
+    
 
 
     /*Forma de la Barra*/

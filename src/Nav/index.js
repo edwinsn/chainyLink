@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import LogOut from '../Components/LogOut';
 import icon_home from '../Assets/Images/chainyicon.svg';
 import SearchLink from './SearchLink';
@@ -17,6 +18,15 @@ export default function Nav() {
     const isPhoneView = useIsPhoneView()
     const stopPropagation = (ev) => ev.preventDefault();
 
+    let location = useLocation();
+    let verifyRouth = (routh) => {
+        if (routh === location.pathname) { return "routh_active" }
+        else { return " " }
+    }
+
+    console.log(verifyRouth("/about"));
+
+
     let sideBarAndIcon = [
 
         <TransformOnSidebarOnPhone
@@ -33,8 +43,8 @@ export default function Nav() {
             <label htmlFor="checkbox" ></label>
 
             <Link
-                to="/"
                 id="name-app"
+                to="/"
                 onClick={() => setSideBarIsOpen(false)}
             >
                 <span className="pink" >Chainy</span>
@@ -43,16 +53,19 @@ export default function Nav() {
 
             <Link
                 className='mx-1 my-2'
+                id={verifyRouth("/about")}
                 to="/about"
                 onClick={() => setSideBarIsOpen(false)}
             >
-                <span className='mx-1'>
+                <span className='mx-1' >
                     <FontAwesomeIcon icon={faCircleInfo} className="icon_barra mr-1" />
                     About
                 </span>
             </Link>
+
             <Link
                 className='mx-1 my-2'
+                id={verifyRouth("/my-links")}
                 to='my-links'
                 onClick={() => setSideBarIsOpen(false)}
             >
@@ -61,10 +74,12 @@ export default function Nav() {
                     My links
                 </span>
             </Link>
+
             <Link
-                onClick={() => setSideBarIsOpen(false)}
                 className='my-2'
+                id={verifyRouth("/")}
                 to='/'
+                onClick={() => setSideBarIsOpen(false)}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
