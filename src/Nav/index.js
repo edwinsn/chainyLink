@@ -24,8 +24,6 @@ export default function Nav() {
         else { return " " }
     }
 
-    console.log(verifyRouth("/about"));
-
 
     let sideBarAndIcon = [
 
@@ -43,12 +41,24 @@ export default function Nav() {
             <label htmlFor="checkbox" ></label>
 
             <Link
+                className='inline-flex align-items-center'
                 id="name-app"
                 to="/"
                 onClick={() => setSideBarIsOpen(false)}
             >
-                <span className="pink" >Chainy</span>
-                <span className='blue'>Link</span>
+                <span className='flex aling-items-center'>
+                    <img
+                        className='mx-1'
+                        id="icon_home_bar"
+                        src={icon_home}
+                        alt=''
+                    />
+
+                    <span className="pink" >Chainy</span>
+                    <span className='blue'>Link</span>
+
+                </span>
+
             </Link>
 
             <Link
