@@ -25,7 +25,7 @@ export default function Link() {
     return (
         <section className='text-center'>
             <header
-                className='flex flex-column'
+                className='flex flex-column align-items-center'
                 id='link-name'>
                 <LinkImage src={link?.image} name={link?.name || link?.childLinks?.[0]?.url} />
                 <div>

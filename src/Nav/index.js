@@ -117,7 +117,7 @@ export default function Nav() {
 
     return (
         <nav>
-            <div className='flex' id="part-1" >
+            <div className='flex align-items-center' id="part-1" >
 
                 {sideBarAndIcon}
 

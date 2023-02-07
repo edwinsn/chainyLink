@@ -2,6 +2,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Nav from '../Nav'
 import { lazy, Suspense } from 'react'
 import EditLink from "./EditLink";
+import LoadingPage from "../Pages/LoadingPage";
 
 const About = lazy(() => import('./Home'));
 const Login = lazy(() => import('./Login'));
@@ -16,7 +17,7 @@ export default function App() {
         <>
             <BrowserRouter>
                 <Nav />
-                <Suspense fallback={<div></div>}>
+                <Suspense fallback={<LoadingPage />}>
                     <Routes>
                         <Route path="/" element={<GenerateLink />} />
                         <Route path="/about" element={<About />} />

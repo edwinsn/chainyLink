@@ -2,6 +2,10 @@
     align-items: center;
 }
 
+.align-items-start{
+    align-items: flex-start;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -23,7 +27,6 @@
 
 .flex {
     display: flex;
-    align-items: center;
 }
 
 .flex-end {
