@@ -2,11 +2,13 @@ import useUserLinks from './hooks/useUserLinks'
 import LinksList from './components/LinksList'
 import useFromLocalStorage from '../../hooks/useFromLocalStorage'
 import userIcon from '../../Assets/Images/user.svg'
+import Loading from '../../Assets/Animations/loading'
 
 const UserLinks = () => {
 
     const userId = useFromLocalStorage('user')?.uid
-    const [userLinks, , noLinks] = useUserLinks({ userId })
+    const [userLinks, loading, noLinks] = useUserLinks({ userId })
+
 
     if (!userId) {
         return (
@@ -38,9 +40,13 @@ const UserLinks = () => {
             <h1 className='text-center mb-3'>
                 Your links
             </h1>
-            <LinksList
+
+            {loading ? <div className='w-100 h-100 flex centered'>
+                <Loading />
+            </div> : <LinksList
                 links={userLinks}
             />
+            }
         </section>
     )
 
