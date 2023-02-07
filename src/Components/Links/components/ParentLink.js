@@ -7,7 +7,7 @@ export default function ParentLink({ id }) {
     const [copied, setCopied] = React.useState(false)
 
     const copyLink = () => {
-        navigator.clipboard.writeText(`https://chainylink.com/${id}`)
+        navigator.clipboard.writeText(`https://chainylink.com/link/${id}`)
         setCopied(prev => !prev)
     }
 
@@ -20,7 +20,7 @@ export default function ParentLink({ id }) {
             <input
                 onFocus={copyLink}
                 type='text'
-                value={(id && `http://chainylink.com/${id}`) || 'Loading...'}
+                value={(id && `http://chainylink.com/link/${id}`) || 'Loading...'}
                 readOnly={true}
             />
             <img src={copied ? checkIcon : copyIcon} alt='copy link' />
