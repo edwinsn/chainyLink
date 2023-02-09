@@ -18,6 +18,9 @@
 
 #aboutFirstCard {
     background-color: var(--primary-color);
+    background-image: url('../HeroAnimation/chips.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
     border-color: var(--primary-light-color) !important;
     z-index: 2;
     position: relative;
