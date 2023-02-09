@@ -43,3 +43,11 @@
 .h-1fr{
     height: calc(100vh - 8vh);
 }
+
+.h-1{
+    height: 1.5em;
+}
+
+.no_decoration {
+    text-decoration: none;
+}

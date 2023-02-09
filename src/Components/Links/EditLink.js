@@ -37,9 +37,7 @@ export default function GenerateLink({ parentLink, childLinks }) {
                 </span>
             </header>
             <h2 className='text-center fs-3 my-3 px-1'>
-                Share everything you want throw one single link,
-                send playlist from diferent sites, shoping cars,
-                whatever you want!
+                Share the good stuff with one link
             </h2>
             <ParentLink id={parentLink} />
             <LinkImage parentLink={parentLink} />
