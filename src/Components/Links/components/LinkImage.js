@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { storage } from '../../../fire'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import useFromLocalStorage from '../../../hooks/useFromLocalStorage'
-import updateLink from '../services/updateLink'
+import patchLink from '../services/patchLink'
 import LogToSaveImageModalAndButton from './LogToSaveImageModalAndButton'
 
 export default function LinkImage({ parentLink }) {
@@ -35,7 +35,7 @@ export default function LinkImage({ parentLink }) {
                     }, 800)
 
                     setImage(url)
-                    updateLink({ parentLink, newImage: url })
+                    patchLink({ parentLink, newImage: url })
                         .catch(() => setErr(true))
 
                 })
@@ -50,7 +50,7 @@ export default function LinkImage({ parentLink }) {
         ev.preventDefault()
 
         setImage(false)
-        updateLink({ parentLink, newImage: false })
+        patchLink({ parentLink, newImage: false })
             .catch(() => setErr(true))
     }
 

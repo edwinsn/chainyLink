@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { REACT_APP_API_URL} from '../../../api'
 
-export default function updateLinkGroupOrder({
+export default function patchLinkGroupOrder({
     parentLink,
     linkUpdated,
 }) {

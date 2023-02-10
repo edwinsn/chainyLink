@@ -4,19 +4,22 @@ import config from '../api'
 
 
 
-export default function useFetch(url, dataToExtract, params = {}) {
+export default function useFetch(url, dataToExtract, params = {}, reactQueryParams = {}) {
 
+    const { isLoading, data, refetch } = useQuery({
+        queryKey: url,
+        queryFn: () => {
 
-    const { isLoading, data, refetch } = useQuery(url, () => {
+            const endpoint = `${config.REACT_APP_API_URL}${url}`
 
-        const endpoint = `${config.REACT_APP_API_URL}${url}`
+            return axios.get(
+                endpoint,
+                {
+                    params
+                })
 
-        return axios.get(
-            endpoint,
-            {
-                params
-            })
-
+        },
+        ...reactQueryParams
     })
 
     let dataExtracted

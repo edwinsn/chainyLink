@@ -1,5 +1,5 @@
 import React from 'react'
-import updateLink from '../services/updateLink'
+import patchLink from '../services/patchLink'
 import debounce from '../../../utils/debounce'
 import { addLink, removeLink } from '../../../reducers/features/links'
 import { useDispatch } from 'react-redux'
@@ -17,7 +17,7 @@ export default function Link({
 
     const handleChanged = debounce((ev) => {
         const newLinkText = ev.target.value
-        updateLink({
+        patchLink({
             newLinkText,
             positionToModify: position,
             parentLink,

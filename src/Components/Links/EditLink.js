@@ -37,7 +37,7 @@ export default function GenerateLink({ parentLink, childLinks }) {
                 </span>
             </header>
             <h2 className='text-center fs-3 my-3 px-1'>
-                Share the good stuff with one link
+                Share the good stuff with this link:
             </h2>
             <ParentLink id={parentLink} />
             <LinkImage parentLink={parentLink} />

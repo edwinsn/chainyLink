@@ -3,7 +3,7 @@ import Modal from 'react-responsive-modal'
 import { CirclePicker } from 'react-color'
 import { useDispatch } from 'react-redux'
 import { setLinkColor } from '../../../reducers/features/links'
-import updateLink from '../services/updateLink'
+import patchLink from '../services/patchLink'
 import { useSelector } from 'react-redux'
 import { setLinkWhoseColorIsBeingModified } from '../../../reducers/features/links'
 
@@ -30,7 +30,7 @@ export const ColorModal = (props) => {
         }
 
         dispatch(setLinkColor(payload))
-        updateLink({
+        patchLink({
             newLinkBackground: color.hex,
             positionToModify: position,
             parentLink,
