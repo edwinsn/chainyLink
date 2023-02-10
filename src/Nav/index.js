@@ -10,12 +10,15 @@ import { faUser } from '@fortawesome/free-regular-svg-icons'
 import './Assets/nav.css';
 import TransformOnSidebarOnPhone from './TransformOnSidebarOnPhone';
 import useIsPhoneView from '../hooks/useIsPhoneView';
+import useTextColor from '../hooks/useTextColor';
 
 export default function Nav() {
 
     const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false)
     const userIsLogged = localStorage.getItem('user')
     const isPhoneView = useIsPhoneView()
+    const textColor = useTextColor()
+
     const stopPropagation = (ev) => ev.preventDefault();
 
     let location = useLocation();
@@ -66,6 +69,7 @@ export default function Nav() {
                 id={verifyRouth("/about")}
                 to="/about"
                 onClick={() => setSideBarIsOpen(false)}
+                style={{ color: textColor }}
             >
                 <span className='mx-1' >
                     <FontAwesomeIcon icon={faCircleInfo} className="icon_barra mr-1" />
@@ -78,6 +82,7 @@ export default function Nav() {
                 id={verifyRouth("/my-links")}
                 to='my-links'
                 onClick={() => setSideBarIsOpen(false)}
+                style={{ color: textColor }}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />
@@ -90,6 +95,7 @@ export default function Nav() {
                 id={verifyRouth("/")}
                 to='/'
                 onClick={() => setSideBarIsOpen(false)}
+                style={{ color: textColor }}
             >
                 <span className='mx-1'>
                     <FontAwesomeIcon icon={faCaretRight} className="icon_barra mr-1" />

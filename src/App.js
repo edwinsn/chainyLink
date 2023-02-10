@@ -8,13 +8,16 @@ import './Assets/css/general.css';
 import './Assets/css/animations.css';
 import Routes from './Routes';
 import { useSelector } from 'react-redux'
+import useTextColor from './hooks/useTextColor';
 
 function App() {
 
   const color = useSelector(state => state.backgroundColor)
+  const textColor = useTextColor()
+
 
   return (
-    <div style={{ backgroundColor: color }}>
+    <div style={{ backgroundColor: color, color: textColor }}>
       <Routes />
     </div>
   );
