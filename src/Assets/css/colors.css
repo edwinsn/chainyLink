@@ -31,6 +31,10 @@
     background-color: #f01376;
 }
 
+.bg-white {
+    background-color: white;
+}
+
 .blue {
     color: blue;
 }

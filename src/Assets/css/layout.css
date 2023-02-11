@@ -94,6 +94,10 @@
     margin: 0 0 2rem 0;
 }
 
+.p-05 {
+    padding: .2rem;
+}
+
 .p-1 {
     padding: .4rem;
 }

@@ -49,9 +49,8 @@ export default function Nav() {
                 to="/"
                 onClick={() => setSideBarIsOpen(false)}
             >
-                <span className='flex aling-items-center'>
+                <span className='flex aling-items-center align-items-center'>
                     <img
-                        className='mx-1'
                         id="icon_home_bar"
                         src={icon_home}
                         alt=''
@@ -117,6 +116,7 @@ export default function Nav() {
                 id="icon_home"
                 src={icon_home}
                 alt=''
+                className={`circle ${textColor && 'p-05 bg-white'}`}
             />
         </Link>
     )
