@@ -8,6 +8,7 @@ import { Modal } from 'react-responsive-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPalette } from '@fortawesome/free-solid-svg-icons'
 import patchLink from '../services/patchLink'
+import colors from '../../../Assets/colors'
 
 export default function BackgroundColorPicker({ parentLink }) {
 
@@ -42,6 +43,7 @@ export default function BackgroundColorPicker({ parentLink }) {
                     <CirclePicker
                         color={color}
                         onChangeComplete={handleChangeComplete}
+                        colors={colors}
                     />
                 </div>
             </Modal>

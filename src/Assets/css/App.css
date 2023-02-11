@@ -7,5 +7,6 @@
 }
 
 .react-responsive-modal-modal{
-  background-color: #EDF2FB !important;
+  border-radius: var(--normal-rounded);
+  background-color: #D8D8DC !important;
 }
