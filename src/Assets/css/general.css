@@ -40,3 +40,15 @@
 .text-icon {
     height: 1em;
 }
+
+.first{
+    order: 1;
+}
+
+.second{
+    order: 2;
+}
+
+.third{
+    order: 3;
+}

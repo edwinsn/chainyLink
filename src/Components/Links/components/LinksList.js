@@ -21,7 +21,7 @@ const grid = 8;
 const getListStyle = isDraggingOver => ({
     background: isDraggingOver ? "lightblue" : "transparent",
     padding: grid,
-    width: '80%',
+    width: '100%',
     maxWidth: '22cm',
     margin: '0 auto',
 });

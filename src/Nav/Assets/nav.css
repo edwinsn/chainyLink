@@ -140,6 +140,10 @@ p {
         margin-bottom: 4vh;
     }
 
+    #part-1 a span{
+        color: blue ;
+    }
+
     #part-1 a:hover {
         background-color: #F72585;
         border: 1px solid lightgray;

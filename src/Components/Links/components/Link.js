@@ -4,6 +4,9 @@ import debounce from '../../../utils/debounce'
 import { addLink, removeLink } from '../../../reducers/features/links'
 import { useDispatch } from 'react-redux'
 import LinkColorPicker from './LinkColorPicker'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Link({
     className,
@@ -39,22 +42,28 @@ export default function Link({
     }
 
     return (
+        <div className='w-100 draggable-link flex centered' >
 
-        <div className='w-100 draggable-link flex' >
             <input
                 placeholder={'https://'}
-                className={`${className} w-100`}
+                className={`${className} w-100 second`}
                 onChange={handleChanged}
                 onFocus={isLast ? onFocused : null}
                 onBlur={isLast ? onBlurred : null}
                 style={inputStyle}
                 defaultValue={defaultValue}
+                type="text"
             />
+            <i className='first'>
+                <FontAwesomeIcon
+                    icon={faBars}
+                    className="mr-1" />
+            </i>
             <LinkColorPicker
                 id={id}
                 parentLink={parentLink}
                 position={position}
-                className='link-color-picker'
+                className='link-color-picker third'
             />
         </div>
     )

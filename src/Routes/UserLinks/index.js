@@ -36,7 +36,7 @@ const UserLinks = () => {
 
 
     return (
-        <section className='flex-column'>
+        <section className='flex-column align-items-center'>
             <h1 className='text-center mb-3'>
                 Your links
             </h1>
@@ -44,7 +44,7 @@ const UserLinks = () => {
             {loading ? <div className='w-100 h-100 flex centered'>
                 <Loading />
             </div> : <LinksList
-                links={userLinks}
+                links={userLinks.reverse()}
             />
             }
         </section>

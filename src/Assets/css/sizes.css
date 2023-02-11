@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.mw-22{
+    max-width: 22cm;
+}
+
 .w-90 {
     width: 90%;
 }

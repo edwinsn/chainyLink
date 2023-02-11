@@ -3,8 +3,7 @@
     border: 1px solid #e5e5e5;
 }
 
-.draggable-link::before {
-    content: url(../Images/dragIcon.svg);
+.draggable-link i {
     margin: 0 10px;
     transition: opacity 0.5s;
     opacity: 0;
@@ -16,7 +15,7 @@
     margin: 0 10px;
 }
 
-.draggable-link:hover::before {
+.draggable-link:hover i, .draggable-link>input[type="text"]:focus ~ * {
     opacity: 0.9;
 }
 

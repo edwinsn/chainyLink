@@ -146,12 +146,16 @@ export default function Nav() {
                     <ul>
                         <Link
                             to="/login"
+                            style={{ color: textColor }}
                         >
                             <li className="mx-1" id="login" >
                                 Login
                             </li>
                         </Link>
-                        <li className='mx-1'>
+                        <li
+                            className='mx-1'
+                            style={{ color: textColor }}
+                        >
                             {
                                 !userIsLogged && (
                                     <Link
@@ -169,6 +173,7 @@ export default function Nav() {
                 {
                     userIsLogged && (
                         <Link to='/'
+                            style={{ color: textColor }}
                         >
                             <LogOut />
                         </Link>
