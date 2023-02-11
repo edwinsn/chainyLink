@@ -3,10 +3,13 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 import './Assets/searchbar.css';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import useCurrentUrl from '../hooks/useCurrentUrl';
 
 export default function SearchLink({ className }) {
 
     const navigate = useNavigate();
+    const url = useCurrentUrl()
+    const link = url.split('/')[2]
 
     const onKeyDown = (e) => {
         if (e.key === 'Enter') {
@@ -15,7 +18,18 @@ export default function SearchLink({ className }) {
         }
     }
 
-    const link = window.location.pathname.split('/')[2]
+    const handlePaste = (e) => {
+
+        const link = e.clipboardData.getData('text').split('/').at(-1)
+
+        if (link) {
+
+            e.preventDefault()
+            e.target.value = link
+
+        }
+
+    }
 
     return (
         <div className="searchbar-contanier">
@@ -27,6 +41,7 @@ export default function SearchLink({ className }) {
                     onKeyDown={onKeyDown}
                     placeholder='search link'
                     defaultValue={link}
+                    onPaste={handlePaste}
                 />
                 <button
                     className="search__submit flex centered gray"
