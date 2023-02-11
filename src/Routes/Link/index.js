@@ -12,9 +12,6 @@ export default function Link() {
     const id = url.split('/')[2]
     let [link, loading] = useLink(id)
 
-    link = {}
-    loading = true
-
     return (
         <section className='text-center'>
             <header
