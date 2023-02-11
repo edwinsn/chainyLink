@@ -1,7 +1,12 @@
 import React from 'react'
 import CopiableText from '../../../Components/CopiableText'
 
-export default function Link({ id, content, backgroundColor }) {
+export default function Link({
+    id,
+    content,
+    backgroundColor,
+    loading,
+}) {
 
     const style = { backgroundColor }
 
@@ -9,7 +14,7 @@ export default function Link({ id, content, backgroundColor }) {
 
     return (
         <div
-            className='link-container flex centered rounded'
+            className={`link-container flex centered rounded ${loading && 'skeleton'}`}
             style={style}
         >
             <a
@@ -19,10 +24,14 @@ export default function Link({ id, content, backgroundColor }) {
                 {content}
             </a>
             <div className='copy-child-link-icon flex'>
-                <CopiableText
-                    text={content}
-                    putAtSide={false}
-                />
+                {
+                    !loading && (
+                        <CopiableText
+                            text={content}
+                            putAtSide={false}
+                        />
+                    )
+                }
             </div>
         </div>
     )
