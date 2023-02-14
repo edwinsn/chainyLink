@@ -7,14 +7,25 @@ export const cardsSlice = createSlice({
     initialState: {
         numberOfLinks: 2,
         backgroundColor: defaultBackground,
-        colorModal: {}
+        colorModal: {},
+        focusedLink: 0,
     },
     reducers: {
-        addLink: (state) => {
-            state.numberOfLinks = state.numberOfLinks < 100 ? state.numberOfLinks + 1 : 100
+        addLink: (state, action) => {
+
+            //check if the next input is empty if so just focus it and don't add a new one
+            const nextInput = document.getElementById(`link-${action.payload?.activeLink + 1}`)
+
+            if (!(nextInput && nextInput.value === '')) {
+                state.numberOfLinks = state.numberOfLinks < 100 ? state.numberOfLinks + 1 : 100
+            }
+
+            state.focusedLink = !isNaN(action.payload?.activeLink) ? action.payload.activeLink + 1 : state.focusedLink
+
         },
-        removeLink: (state) => {
-            state.numberOfLinks = state.numberOfLinks > 0 ? state.numberOfLinks - 1 : 0
+        removeLink: (state, action) => {
+            state.numberOfLinks = state.numberOfLinks > 1 ? state.numberOfLinks - 1 : 1
+            state.focusedLink = (!isNaN(action.payload?.activeLink) && action.payload?.activeLink > 0) ? action.payload.activeLink - 1 : state.focusedLink
         },
         setLinksNumber: (state, action) => {
             state.numberOfLinks = action.payload

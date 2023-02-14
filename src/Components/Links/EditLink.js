@@ -22,7 +22,7 @@ export default function GenerateLink({ parentLink, childLinks }) {
     }, [dispatch])
 
     return (
-        <section id='generate-link-section'>
+        <section id='generate-link-section' className='px-0'>
             <header className='flex wrap centered fs-1 px-2'>
                 <img
                     src={chainyIcon}

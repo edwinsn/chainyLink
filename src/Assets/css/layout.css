@@ -2,7 +2,7 @@
     align-items: center;
 }
 
-.align-items-start{
+.align-items-start {
     align-items: flex-start;
 }
 
@@ -110,6 +110,11 @@
 .px-2 {
     padding-left: .8rem;
     padding-right: .8rem;
+}
+
+.px-0 {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .px-1 {
