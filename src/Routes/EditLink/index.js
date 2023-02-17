@@ -8,7 +8,7 @@ export default function Link() {
     const [link] = useLink(parentLink)
 
     return (
-        <EditLink parentLink={parentLink} childLinks={link?.childLinks} />
+        <EditLink parentLink={link?.name || parentLink} childLinks={link?.childLinks} />
     )
 
 }

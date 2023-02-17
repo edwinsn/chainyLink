@@ -23,7 +23,7 @@
     opacity: 0.9;
 }
 
-#parent-link img {
+#parent-link img, #parent-link svg {
     position: relative;
     right: 3em;
 }
