@@ -25,7 +25,7 @@ export default function ParentLink({ id }) {
     ))
 
     useEffect(() => {
-        if (!!hasInputChanged) {
+        if (!!hasInputChanged && id) {
             inputRef.current.value = id
         }
     }, [id])
