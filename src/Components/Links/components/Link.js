@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react'
 import patchLink from '../services/patchLink'
 import debounce from '../../../utils/debounce'
-import { addLink, removeLink } from '../../../reducers/features/links'
+import {
+    addLink,
+    removeLink,
+    focusNextLink,
+    setFocusedLink,
+    focusPreviousLink,
+} from '../../../reducers/features/links'
 import { useDispatch } from 'react-redux'
 import LinkColorPicker from './LinkColorPicker'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -45,9 +51,16 @@ export default function Link({
     const handleKeyDown = (ev) => {
 
         //if enter then add a link
-        if (ev.key === 'Enter') {
+        if (!ev.shiftKey && ev.key === 'Enter') {
             ev.preventDefault()
             dispatch(addLink({ activeLink: position }))
+            return
+        }
+
+        //if tab then move to the next link
+        if (ev.key === 'Tab') {
+            ev.preventDefault()
+            dispatch(focusNextLink({ activeLink: position }))
             return
         }
 
@@ -57,6 +70,24 @@ export default function Link({
             return
         }
 
+        //if arrow up and cursor at first line then move to the previous link
+        if (ev.key === 'ArrowUp' && ev.target.selectionStart === 0) {
+            ev.preventDefault()
+            dispatch(focusPreviousLink({ activeLink: position }))
+            return
+        }
+
+        //if arrow down and cursor at last line then move to the next link
+        if (ev.key === 'ArrowDown' && ev.target.selectionStart === ev.target.value.length) {
+            ev.preventDefault()
+            dispatch(focusNextLink({ activeLink: position }))
+            return
+        }
+
+    }
+
+    const handleFocus = () => {
+        dispatch(setFocusedLink(position))
     }
 
     useEffect(() => {
@@ -68,17 +99,18 @@ export default function Link({
     return (
         <div className='w-100 draggable-link flex centered' >
 
-            <input
+            <textarea
                 ref={inputRef}
                 id={`link-${position}`}
                 placeholder={'https://'}
-                className={`${className} w-100 second`}
+                className={`${className} w-100 second input-style h-5em`}
                 onChange={handleChanged}
                 onKeyDown={handleKeyDown}
                 style={inputStyle}
                 defaultValue={defaultValue}
                 type="text"
                 autoFocus={isFocused}
+                onFocus={handleFocus}
             />
             <i className='first'>
                 <FontAwesomeIcon

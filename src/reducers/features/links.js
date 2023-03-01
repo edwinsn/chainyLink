@@ -23,6 +23,29 @@ export const cardsSlice = createSlice({
             state.focusedLink = !isNaN(action.payload?.activeLink) ? action.payload.activeLink + 1 : state.focusedLink
 
         },
+        focusNextLink: (state, action) => {
+
+            //check if the next input exists if so focus it
+            const nextInput = document.getElementById(`link-${action.payload?.activeLink + 1}`)
+
+            if (nextInput) {
+                state.focusedLink = !isNaN(action.payload?.activeLink) ? action.payload.activeLink + 1 : state.focusedLink
+            }
+
+        },
+        focusPreviousLink: (state, action) => {
+
+            //check if the next input exists if so focus it
+            const previousInput = document.getElementById(`link-${action.payload?.activeLink - 1}`)
+
+            if (previousInput) {
+                state.focusedLink = !isNaN(action.payload?.activeLink) ? action.payload.activeLink - 1 : state.focusedLink
+            }
+
+        },
+        setFocusedLink: (state, action) => {
+            state.focusedLink = action.payload
+        },
         removeLink: (state, action) => {
             state.numberOfLinks = state.numberOfLinks > 1 ? state.numberOfLinks - 1 : 1
             state.focusedLink = (!isNaN(action.payload?.activeLink) && action.payload?.activeLink > 0) ? action.payload.activeLink - 1 : state.focusedLink
@@ -56,6 +79,9 @@ export const {
     setLinkColor,
     setLinkWhoseColorIsBeingModified,
     setLinksNumber,
+    focusNextLink,
+    setFocusedLink,
+    focusPreviousLink
 } = cardsSlice.actions
 
 export default cardsSlice.reducer

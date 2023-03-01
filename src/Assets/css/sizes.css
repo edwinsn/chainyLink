@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.mw-22{
+.mw-22 {
     max-width: 22cm;
 }
 
@@ -40,16 +40,20 @@
     height: 100%;
 }
 
-.h-100vh{
+.h-100vh {
     height: 100vh;
 }
 
-.h-1fr{
+.h-1fr {
     height: calc(100vh - 8vh);
 }
 
-.h-1{
+.h-1 {
     height: 1.5em;
+}
+
+.h-5em {
+    height: 5em;
 }
 
 .no_decoration {
