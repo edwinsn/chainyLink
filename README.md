@@ -1,1 +1,2 @@
-SHare the cool stuff with one link
+Share the cool stuff with one link 
+https://chainylink.com/about
